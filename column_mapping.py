@@ -1,0 +1,276 @@
+"""
+列名映射 - 将英文列名转换为中文
+"""
+
+# 财务报表列名映射
+FINANCIAL_COLUMNS = {
+    'SECUCODE': '证券代码',
+    'SECURITY_CODE': '代码',
+    'SECURITY_NAME_ABBR': '名称',
+    'ORG_CODE': '机构代码',
+    'ORG_TYPE': '机构类型',
+    'REPORT_DATE': '报告期',
+    'REPORT_TYPE': '报告类型',
+    'REPORT_DATE_NAME': '报告期名称',
+    'SECURITY_TYPE_CODE': '证券类型代码',
+    'NOTICE_DATE': '公告日期',
+    'UPDATE_DATE': '更新日期',
+    'CURRENCY': '货币',
+    'EPSJB': '基本每股收益',
+    'EPSKCJB': '扣除非经常性损益后的基本每股收益',
+    'EPSXS': '稀释每股收益',
+    'BPS': '每股净资产',
+    'MGZBGJ': '每股资本公积金',
+    'MGWFPLR': '每股未分配利润',
+    'MGJYXJJE': '每股经营现金净流量',
+    'TOTALOPERATEREVE': '营业总收入',
+    'MLR': '毛利润',
+    'PARENTNETPROFIT': '净利润',
+    'KCFJCXSYJLR': '扣除非经常性损益后的净利润',
+    'TOTALOPERATEREVETZ': '营业总收入同比增长',
+    'PARENTNETPROFITTZ': '净利润同比增长',
+    'KCFJCXSYJLRTZ': '扣除非经常性损益后的净利润同比增长',
+    'YYZSRGDHBZC': '营业总收入环比增长',
+    'NETPROFITRPHBZC': '净利润环比增长',
+    'KFJLRGDHBZC': '扣除非经常性损益后的净利润环比增长',
+    'ROEJQ': '净资产收益率(加权平均)',
+    'ROEKCJQ': '净资产收益率(扣除/摊薄)',
+    'ZZCJLL': '总资产净利率',
+    'XSJLL': '销售净利率',
+    'XSMLL': '销售毛利率',
+    'YSZKYYSR': '应收账款占营业收入比例',
+    'XSJXLYYSR': '营业收入现金含量',
+    'JYXJLYYSR': '经营现金流占利润比例',
+    'TAXRATE': '所得税率',
+    'LD': '流动比率',
+    'SD': '速动比率',
+    'XJLLB': '经营现金流量净额',
+    'ZCFZL': '资产负债率',
+    'QYCS': '企业规模',
+    'CQBL': '权益乘数',
+    'ZZCZZTS': '总资产周转天数',
+    'CHZZTS': '存货周转天数',
+    'YSZKZZTS': '应收账款周转天数',
+    'TOAZZL': '总资产增长率',
+    'CHZZL': '存货增长率',
+    'YSZKZZL': '应收账款增长率',
+    'TOTALDEPOSITS': '存款总额',
+    'GROSSLOANS': '贷款总额',
+    'LTDRR': '流动性覆盖率',
+    'NEWCAPITALADER': '新增贷款',
+    'HXYJBCZL': '核心一级资本充足率',
+    'NONPERLOAN': '不良贷款',
+    'BLDKBBL': '拨备覆盖率',
+    'NZBJE': '每股净资产',
+    'TOTAL_ROI': '总资产收益率',
+    'NET_ROI': '净资产收益率',
+    'EARNED_PREMIUM': '已赚保费',
+    'COMPENSATE_EXPENSE': '赔付支出',
+    'SURRENDER_RATE_LIFE': '退保率',
+    'SOLVENCY_AR': '偿付能力充足率',
+    'JZB': '净资本',
+    'JZC': '净资产',
+    'JZBJZC': '净资本/净资产',
+    'ZYGPGMJZC': '自营资产规模',
+    'ZYGDSYLZQJZB': '自营权益类证券占净资本比例',
+    'YYFXZB': '营业支出',
+    'JJYWFXZB': '经纪业务风险资本',
+    'ZQZYYWFXZB': '证券自营业务风险资本',
+    'ZQCXYWFXZB': '证券承销业务风险资本',
+    'RZRQYWFXZB': '融资融券业务风险资本',
+    'EPSJBTZ': '基本每股收益同比增长',
+    'BPSTZ': '报表期同比增长',
+    'MGZBGJTZ': '每股资本公积金同比增长',
+    'MGWFPLRTZ': '每股未分配利润同比增长',
+    'MGJYXJJETZ': '每股经营现金净流量同比增长',
+    'ROEJQTZ': '净资产收益率同比增长',
+    'ZZCJLLTZ': '总资产净利率同比增长',
+    'ZCFZLTZ': '资产负债率同比增长',
+    'REPORT_YEAR': '报告年份',
+    'ROIC': '资本回报率',
+    'ROICTZ': '资本回报率同比增长',
+    'NBV_LIFE': '内含价值',
+    'NBV_RATE': '内含价值增长率',
+    'NHJZ_CURRENT_AMT': '净资产',
+    'DJD_TOI_YOY': '营业总收入同比增长',
+    'DJD_DPNP_YOY': '净利润同比增长',
+    'DJD_DEDUCTDPNP_YOY': '扣除非经常性损益后的净利润同比增长',
+    'DJD_TOI_QOQ': '营业总收入环比增长',
+    'DJD_DPNP_QOQ': '净利润环比增长',
+    'DJD_DEDUCTDPNP_QOQ': '扣除非经常性损益后的净利润环比增长',
+    'XSMLL_TB': '销售毛利率',
+    'PER_TOI': '营业总收入占净资产比例',
+    'PER_OI': '营业利润占净资产比例',
+    'PER_EBIT': '息税前利润占净资产比例',
+    'STAFF_NUM': '员工人数',
+    'AVG_TOI': '人均营业总收入',
+    'AVG_NET_PROFIT': '人均净利润',
+    'PREPAID_ACCOUNTS_RATIO': '预付账款占比',
+    'ACCOUNTS_PAYABLE_TR': '应付账款周转天数',
+    'FIXED_ASSET_TR': '固定资产周转天数',
+    'CURRENT_ASSET_TR': '流动资产周转天数',
+    'PREPAID_ACCOUNTS_TDAYS': '预付账款周转天数',
+    'PAYABLE_TDAYS': '应付账款周转天数',
+    'OPERATE_CYCLE': '营业周期',
+    'GUARD_SPEED_RATIO': '保守速动比率',
+    'CASH_RATIO': '现金比率',
+    'INTEREST_COVERAGE_RATIO': '利息保障倍数',
+    'CA_TA': '流动资产/总资产',
+    'NCA_TA': '非流动资产/总资产',
+    'LIQUIDATION_RATIO': '清算价值比率',
+    'INTEREST_DEBT_RATIO': '有息负债率',
+    'FC_LIABILITIES': '财务杠杆',
+    'FCFF_FORWARD': '企业自由现金流预测',
+    'FCFF_BACK': '企业自由现金流回溯',
+    'SS_OI': '营业利润',
+    'SS_TA': '总资产',
+    'NCO_OP': '营运资本',
+    'NCO_NETPROFIT': '营运资本净额',
+    'NCO_FIXED': '固定资产',
+    'FIRST_ADEQUACY_RATIO': '一级资本充足率',
+    'NET_INTEREST_SPREAD': '净利息收益率',
+    'NET_INTEREST_MARGIN': '净息差',
+    'LOAN_ADVANCES': '贷款及垫款',
+    'NON_PERFORMING_LOAN': '不良贷款余额',
+    'OVERDUE_LOANS': '逾期贷款',
+    'LOAN_PROVISION_RATIO': '贷款拨备率',
+    'REVENUE_RATIO': '收入保费比',
+    'LIABILITY': '负债',
+    'CAPITAL_PROVISIONS_SUM': '资本充足率',
+    'RISK_COVERAGE': '风险覆盖率',
+    'CAPITAL_LEVERAGE_RATIO': '资本杠杆率',
+    'LIQUIDITY_COVERAGE_RATIO': '流动性覆盖率',
+    'NET_FUNDING_RATIO': '净稳定资金比率',
+    'NET_CAPITAL_LIABILITIES': '净资本负债',
+    'NET_ASSETS_LIABILITIES': '净资产负债',
+    'PROPRIETARY_CAPITAL': '所有者权益',
+}
+
+# 实时行情列名映射
+QUOTE_COLUMNS = {
+    '代码': '代码',
+    '名称': '名称',
+    '最新价': '最新价',
+    '涨跌幅': '涨跌幅(%)',
+    '涨跌额': '涨跌额',
+    '成交量': '成交量(手)',
+    '成交额': '成交额',
+    '振幅': '振幅(%)',
+    '最高': '最高',
+    '最低': '最低',
+    '今开': '今开',
+    '昨收': '昨收',
+    '量比': '量比',
+    '换手率': '换手率(%)',
+    '市盈率-动态': '市盈率-动态',
+    '市净率': '市净率',
+    '总市值': '总市值',
+    '流通市值': '流通市值',
+}
+
+# 资金流向列名映射
+FUND_FLOW_COLUMNS = {
+    '代码': '代码',
+    '名称': '名称',
+    '最新价': '最新价',
+    '涨跌幅': '涨跌幅(%)',
+    '主力净流入': '主力净流入',
+    '超大单净流入': '超大单净流入',
+    '大单净流入': '大单净流入',
+    '中单净流入': '中单净流入',
+    '小单净流入': '小单净流入',
+    '主力净流入-净额': '主力净流入-净额',
+    '超大单净流入-净额': '超大单净流入-净额',
+    '大单净流入-净额': '大单净流入-净额',
+    '中单净流入-净额': '中单净流入-净额',
+    '小单净流入-净额': '小单净流入-净额',
+    '主力净占比': '主力净占比(%)',
+    '超大单净占比': '超大单净占比(%)',
+    '大单净占比': '大单净占比(%)',
+    '中单净占比': '中单净占比(%)',
+    '小单净占比': '小单净占比(%)',
+    '市场名称': '市场名称',
+}
+#历史行情映射a
+HISTORY_A_COLUMNS = {
+    'date': '日期',
+    'open': '开盘',
+    'high': '最高',
+    'low': '最低',
+    'close': '收盘',
+    'volume': '成交量',           # 单位：股
+    'amount': '成交额',          # 单位：元
+    'outstanding_share': '流动股本',  # 单位：股
+    'turnover': '换手率'
+}
+HISTORY_B_COLUMNS = {
+    'date': '日期',
+    'open': '开盘',
+    'close': '收盘',
+    'high': '最高',
+    'low': '最低',
+    'volume': '成交量',        # 单位：股
+    'outstanding_share': '流动股本',  # 单位：股
+    'turnover': '换手率'
+}
+
+# 同行比较列名映射（API已返回中文，这里保持原样）
+GROWTH_COMPARISON_COLUMNS = {
+    '代码': '代码',
+    '简称': '简称',
+    '基本每股收益增长率-3年复合': '基本每股收益增长率-3年复合',
+    '基本每股收益增长率-24A': '基本每股收益增长率-24A',
+    '基本每股收益增长率-TTM': '基本每股收益增长率-TTM',
+    '基本每股收益增长率-25E': '基本每股收益增长率-25E',
+    '基本每股收益增长率-26E': '基本每股收益增长率-26E',
+    '基本每股收益增长率-27E': '基本每股收益增长率-27E',
+    '营业收入增长率-3年复合': '营业收入增长率-3年复合',
+    '营业收入增长率-24A': '营业收入增长率-24A',
+    '营业收入增长率-TTM': '营业收入增长率-TTM',
+    '营业收入增长率-25E': '营业收入增长率-25E',
+    '营业收入增长率-26E': '营业收入增长率-26E',
+    '营业收入增长率-27E': '营业收入增长率-27E',
+    '净利润增长率-3年复合': '净利润增长率-3年复合',
+    '净利润增长率-24A': '净利润增长率-24A',
+    '净利润增长率-TTM': '净利润增长率-TTM',
+    '净利润增长率-25E': '净利润增长率-25E',
+    '净利润增长率-26E': '净利润增长率-26E',
+    '净利润增长率-27E': '净利润增长率-27E',
+    '基本每股收益增长率-3年复合排名': '基本每股收益增长率-3年复合排名',
+    '净利润增长率-3年复合排名': '净利润增长率-3年复合排名',
+    '营业收入增长率-3年复合排名': '营业收入增长率-3年复合排名',
+    # 可能的其他字段
+    '股票简称': '股票简称',
+    '最新价': '最新价',
+    '总市值': '总市值',
+    '流通市值': '流通市值',
+    '涨跌幅': '涨跌幅',
+    '换手率': '换手率',
+}
+
+def get_column_mapping(data_type):
+    """根据数据类型获取列名映射"""
+    mapping_dict = {
+        'financial': FINANCIAL_COLUMNS,
+        'quote': QUOTE_COLUMNS,
+        'quote_zh_a': QUOTE_COLUMNS,
+        'quote_zh_b': QUOTE_COLUMNS,     # B股已返回中文列名
+        'quote_zh_ah': QUOTE_COLUMNS,    # AH股已返回中文列名
+        'quote_zh_kcb': QUOTE_COLUMNS,  # 科创版已返回中文列名
+        'quote_hk': {},                 # 港股已返回中文列名
+        'fund_flow': FUND_FLOW_COLUMNS,  # 同花顺已返回中文，此映射备用
+        'history_a': HISTORY_A_COLUMNS,
+        'history_b':HISTORY_B_COLUMNS,
+        'growth_comparison': GROWTH_COMPARISON_COLUMNS  # 同行比较列名
+    }
+    return mapping_dict.get(data_type, {})
+
+
+def rename_columns(df, data_type):
+    """重命名DataFrame的列名为中文"""
+    mapping = get_column_mapping(data_type)
+    if mapping:
+        # 只重命名映射中存在的列
+        new_columns = {col: mapping.get(col, col) for col in df.columns if col in mapping}
+        df = df.rename(columns=new_columns)
+    return df
