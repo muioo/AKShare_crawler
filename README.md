@@ -4,6 +4,7 @@
 基于AKShare库开发的股票数据GUI工具，支持实时行情、资金流向、单股分析、同行比较等功能。
 
 ## 使用方法
+python=3.12
 ```bash
 pip install requirements.txt
 pyhton run_gui.py
