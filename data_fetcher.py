@@ -8,6 +8,7 @@ from utils import retry, get_timestamp, logger
 from column_mapping import rename_columns
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import threading
+from financial_analysis import FinancialAnalysis
 
 
 class DataFetcher:
@@ -16,6 +17,7 @@ class DataFetcher:
     def __init__(self):
         self.data_dir = DATA_DIR
         self._lock = threading.Lock()
+        self.financial_analyzer = FinancialAnalysis()
 
     @retry(max_retries=3, delay=5)
     def fetch_financial_data(self):
@@ -143,18 +145,44 @@ class DataFetcher:
         return results
 
     @retry(max_retries=3, delay=5)
-    def fetch_fund_flow_data(self):
+    def fetch_financial_analysis(self, year=None, quarter_code=None, date=None):
         """
-        获取资金流向数据
-        使用: ak.stock_fund_flow_individual - 个股资金流向（同花顺）
+        获取财报分析数据
+        使用: ak.stock_yjbb_em - 东方财富研报
+
+        Args:
+            year: 年份（如 2024）
+            quarter_code: 季度代码（如 '1231'、'0331'、'0630'、'0930'）
+            date: 完整日期字符串（格式：YYYYMMDD，如 '20241231'），优先使用date参数
+
+        Returns:
+            DataFrame: 财报分析数据
         """
-        logger.info("Fetching fund flow data from Tonghuashun...")
+        logger.info(f"Fetching financial analysis...")
         try:
-            df = ak.stock_fund_flow_individual(symbol="即时")
-            # 同花顺已返回中文列名，跳过重命名
-            return df, 'fund_flow', '资金流向'
+            # 优先使用date参数
+            if date:
+                year = int(date[:4])
+                quarter_code = date[4:]
+            elif year is None or quarter_code is None:
+                # 默认使用当前年份数据
+                from datetime import datetime
+                year = datetime.now().year
+                quarter_code = '1231'  # 默认年报
+
+            df = self.financial_analyzer.fetch_data(year, quarter_code)
+
+            # 调试信息
+            print(f"[data_fetcher] 获取 {year}{quarter_code} 财报分析成功")
+            print(f"[data_fetcher] 数据类型: {type(df)}")
+            print(f"[data_fetcher] 数据形状: {df.shape if df is not None else 'None'}")
+            if df is not None and not df.empty:
+                print(f"[data_fetcher] 列名: {df.columns.tolist()}")
+
+            # 东方财富已返回中文列名，使用映射
+            return df, 'financial_analysis', '财报分析'
         except Exception as e:
-            logger.error(f"Failed to fetch fund flow data: {e}")
+            logger.error(f"Failed to fetch financial analysis: {e}")
             raise
 
     @retry(max_retries=3, delay=5)
@@ -217,6 +245,23 @@ class DataFetcher:
             logger.error(f"Failed to fetch growth comparison for {symbol}: {e}")
             raise
 
+    def fetch_all_quote_data_only(self):
+        """
+        只获取实时股票行情数据（立即爬取和自动爬取使用）
+
+        Returns:
+            字典 {subtype: (df, data_type, subtype)}
+        """
+        logger.info("=" * 50)
+        logger.info("Starting to fetch quote data only...")
+
+        results = self.fetch_all_quote_data()
+
+        logger.info("=" * 50)
+        logger.info(f"Quote data fetch completed: {len(results)} data sources succeeded")
+
+        return results
+
     def fetch_all_parallel(self):
         """
         并行获取所有数据（财务、行情、资金流向）
@@ -237,8 +282,8 @@ class DataFetcher:
             # 实时行情（内部已经并行）
             future_quote = executor.submit(self.fetch_all_quote_data)
 
-            # 资金流向
-            future_fund_flow = executor.submit(self.fetch_fund_flow_data)
+            # 财报分析
+            future_financial_analysis = executor.submit(self.fetch_financial_analysis)
 
             # 等待并收集结果
             try:
@@ -255,11 +300,11 @@ class DataFetcher:
                 logger.error(f"Quote data fetch failed: {e}")
 
             try:
-                df, data_type, subtype = future_fund_flow.result()
+                df, data_type, subtype = future_financial_comparison.result()
                 results[subtype] = (df, data_type, subtype)
                 logger.info(f"Success: {subtype}")
             except Exception as e:
-                logger.error(f"Fund flow data fetch failed: {e}")
+                logger.error(f"Financial comparison data fetch failed: {e}")
 
         logger.info("=" * 50)
         logger.info(f"Parallel fetch completed: {len(results)} data sources succeeded")
@@ -292,10 +337,10 @@ class DataFetcher:
             logger.error(f"Quote data fetch failed: {e}")
 
         try:
-            # 3. 获取资金流向
-            results['fund_flow'] = self.fetch_fund_flow_data()
+            # 3. 获取财报分析
+            results['financial_analysis'] = self.fetch_financial_analysis()
         except Exception as e:
-            logger.error(f"Fund flow data fetch failed: {e}")
+            logger.error(f"Financial analysis data fetch failed: {e}")
 
         logger.info("=" * 50)
         return results

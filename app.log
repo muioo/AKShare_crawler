@@ -995,3 +995,739 @@
 2026-04-16 16:38:57,196 - utils - INFO - Fetched 8 comparison records for SH688227
 2026-04-16 16:39:34,426 - utils - INFO - Fetching stock history: bj920007 (A股)
 2026-04-16 16:39:35,795 - utils - INFO - Fetched 22 records for bj920007 (A股)
+2026-04-17 09:18:40,195 - utils - INFO - ============================================================
+2026-04-17 09:18:40,195 - utils - INFO - Scheduler started - will run every 30 minutes
+2026-04-17 09:18:40,195 - utils - INFO - Executing scheduled task at 2026-04-17 09:18:40
+2026-04-17 09:18:40,195 - utils - INFO - ============================================================
+2026-04-17 09:18:40,198 - utils - INFO - Cleaned 0 old files, freed 0.00 KB
+2026-04-17 09:18:40,198 - utils - INFO - ==================================================
+2026-04-17 09:18:40,198 - utils - INFO - Starting to fetch all data in parallel...
+2026-04-17 09:18:40,198 - utils - INFO - Fetching financial data...
+2026-04-17 09:18:40,199 - utils - INFO - ==================================================
+2026-04-17 09:18:40,199 - utils - INFO - Starting to fetch all quote data sources in parallel...
+2026-04-17 09:18:40,199 - utils - INFO - Fetching fund flow data from Tonghuashun...
+2026-04-17 09:18:40,200 - utils - INFO - Fetching real-time quote data (沪深京A股) from Sina Finance...
+2026-04-17 09:18:40,200 - utils - INFO - Fetching real-time quote data (B股)...
+2026-04-17 09:18:40,270 - utils - INFO - Fetching real-time quote data (AH股)...
+2026-04-17 09:18:40,271 - utils - INFO - Fetching real-time quote data (科创版)...
+2026-04-17 09:18:40,272 - utils - INFO - Fetching real-time quote data (港股)...
+2026-04-17 09:18:40,406 - utils - INFO - Success: 财务报表
+2026-04-17 09:18:40,772 - utils - INFO - Success: 实时行情_B股 - 79 records
+2026-04-17 09:18:41,080 - utils - INFO - Success: 实时行情_AH股 - 40 records
+2026-04-17 09:18:42,755 - utils - INFO - Success: 实时行情_科创版 - 607 records
+2026-04-17 13:56:58,392 - utils - INFO - Fetching real-time quote data (沪深京A股) from Sina Finance...
+2026-04-17 13:57:26,158 - utils - INFO - ==================================================
+2026-04-17 13:57:26,159 - utils - INFO - Starting to fetch all data in parallel...
+2026-04-17 13:57:26,159 - utils - INFO - Fetching financial data...
+2026-04-17 13:57:26,160 - utils - INFO - ==================================================
+2026-04-17 13:57:26,160 - utils - INFO - Starting to fetch all quote data sources in parallel...
+2026-04-17 13:57:26,160 - utils - INFO - Fetching fund flow data from Tonghuashun...
+2026-04-17 13:57:26,161 - utils - INFO - Fetching real-time quote data (沪深京A股) from Sina Finance...
+2026-04-17 13:57:26,162 - utils - INFO - Fetching real-time quote data (B股)...
+2026-04-17 13:57:26,237 - utils - INFO - Fetching real-time quote data (AH股)...
+2026-04-17 13:57:26,238 - utils - INFO - Fetching real-time quote data (科创版)...
+2026-04-17 13:57:26,239 - utils - INFO - Fetching real-time quote data (港股)...
+2026-04-17 13:57:26,381 - utils - INFO - Success: 财务报表
+2026-04-17 13:57:26,779 - utils - INFO - Success: 实时行情_B股 - 79 records
+2026-04-17 13:57:29,377 - utils - INFO - Success: 实时行情_科创版 - 607 records
+2026-04-17 13:57:29,595 - utils - INFO - Success: 实时行情_AH股 - 200 records
+2026-04-17 13:57:42,196 - utils - INFO - Success: 实时行情_港股 - 2745 records
+2026-04-17 13:57:43,623 - utils - INFO - Success: 实时行情_沪深京 - 5505 records
+2026-04-17 13:57:43,625 - utils - INFO - All quote data fetch completed: 5/5 succeeded
+2026-04-17 13:57:43,625 - utils - INFO - ==================================================
+2026-04-17 13:57:45,715 - utils - INFO - Success: 资金流向
+2026-04-17 13:57:45,715 - utils - INFO - ==================================================
+2026-04-17 13:57:45,715 - utils - INFO - Parallel fetch completed: 7 data sources succeeded
+2026-04-17 14:06:20,651 - utils - INFO - ==================================================
+2026-04-17 14:06:20,652 - utils - INFO - Starting to fetch all data in parallel...
+2026-04-17 14:06:20,652 - utils - INFO - Fetching financial data...
+2026-04-17 14:06:20,652 - utils - INFO - ==================================================
+2026-04-17 14:06:20,653 - utils - INFO - Starting to fetch all quote data sources in parallel...
+2026-04-17 14:06:20,653 - utils - INFO - Fetching fund flow data from Tonghuashun...
+2026-04-17 14:06:20,653 - utils - INFO - Fetching real-time quote data (沪深京A股) from Sina Finance...
+2026-04-17 14:06:20,657 - utils - INFO - Fetching real-time quote data (B股)...
+2026-04-17 14:06:20,658 - utils - INFO - Fetching real-time quote data (AH股)...
+2026-04-17 14:06:20,659 - utils - INFO - Fetching real-time quote data (科创版)...
+2026-04-17 14:06:20,660 - utils - INFO - Fetching real-time quote data (港股)...
+2026-04-17 14:06:20,804 - utils - INFO - Success: 财务报表
+2026-04-17 14:06:21,152 - utils - INFO - Success: 实时行情_B股 - 79 records
+2026-04-17 14:06:23,544 - utils - INFO - Success: 实时行情_科创版 - 607 records
+2026-04-17 14:06:23,813 - utils - INFO - Success: 实时行情_AH股 - 200 records
+2026-04-17 14:06:36,069 - utils - INFO - Success: 实时行情_港股 - 2745 records
+2026-04-17 14:06:41,234 - utils - INFO - Success: 实时行情_沪深京 - 5505 records
+2026-04-17 14:06:41,234 - utils - INFO - All quote data fetch completed: 5/5 succeeded
+2026-04-17 14:06:41,235 - utils - INFO - ==================================================
+2026-04-17 14:06:41,235 - utils - INFO - Success: 资金流向
+2026-04-17 14:06:41,235 - utils - INFO - ==================================================
+2026-04-17 14:06:41,235 - utils - INFO - Parallel fetch completed: 7 data sources succeeded
+2026-04-18 15:06:03,357 - utils - INFO - ==================================================
+2026-04-18 15:06:03,358 - utils - INFO - Starting to fetch all data in parallel...
+2026-04-18 15:06:03,358 - utils - INFO - Fetching financial data...
+2026-04-18 15:06:03,359 - utils - INFO - ==================================================
+2026-04-18 15:06:03,359 - utils - INFO - Starting to fetch all quote data sources in parallel...
+2026-04-18 15:06:03,359 - utils - INFO - Fetching fund flow data from Tonghuashun...
+2026-04-18 15:06:03,359 - utils - INFO - Fetching real-time quote data (沪深京A股) from Sina Finance...
+2026-04-18 15:06:03,360 - utils - INFO - Fetching real-time quote data (B股)...
+2026-04-18 15:06:03,448 - utils - INFO - Fetching real-time quote data (AH股)...
+2026-04-18 15:06:03,449 - utils - INFO - Fetching real-time quote data (科创版)...
+2026-04-18 15:06:03,450 - utils - INFO - Fetching real-time quote data (港股)...
+2026-04-18 15:06:03,701 - utils - INFO - Success: 财务报表
+2026-04-18 15:06:04,030 - utils - INFO - Success: 实时行情_B股 - 79 records
+2026-04-18 15:06:06,314 - utils - INFO - Success: 实时行情_科创版 - 607 records
+2026-04-18 15:06:07,955 - utils - INFO - Success: 实时行情_AH股 - 200 records
+2026-04-18 15:06:21,682 - utils - INFO - Success: 实时行情_港股 - 2745 records
+2026-04-18 15:06:39,722 - utils - INFO - Success: 实时行情_沪深京 - 5505 records
+2026-04-18 15:06:39,723 - utils - INFO - All quote data fetch completed: 5/5 succeeded
+2026-04-18 15:06:39,723 - utils - INFO - ==================================================
+2026-04-18 15:06:39,724 - utils - INFO - Success: 资金流向
+2026-04-18 15:06:39,724 - utils - INFO - ==================================================
+2026-04-18 15:06:39,725 - utils - INFO - Parallel fetch completed: 7 data sources succeeded
+2026-04-19 13:06:08,695 - utils - INFO - Fetching growth comparison for: BJ920000
+2026-04-19 13:06:09,017 - utils - INFO - Fetched 8 comparison records for BJ920000
+2026-04-19 13:20:43,752 - utils - INFO - Fetching stock history: bj920000 (A股)
+2026-04-19 13:20:45,673 - utils - INFO - Fetched 20 records for bj920000 (A股)
+2026-04-19 13:23:26,357 - utils - INFO - Fetching stock history: bj920000 (A股)
+2026-04-19 13:23:27,944 - utils - INFO - Fetched 58 records for bj920000 (A股)
+2026-04-19 13:32:57,265 - utils - INFO - Fetching stock history: bj920000 (A股)
+2026-04-19 13:32:58,498 - utils - INFO - Fetched 20 records for bj920000 (A股)
+2026-04-19 14:19:18,875 - utils - INFO - Fetching stock history: bj920000 (A股)
+2026-04-19 14:19:20,439 - utils - INFO - Fetched 20 records for bj920000 (A股)
+2026-04-19 14:30:06,402 - utils - INFO - Fetching stock history: bj920000 (A股)
+2026-04-19 14:30:07,823 - utils - INFO - Fetched 20 records for bj920000 (A股)
+2026-04-19 15:02:19,234 - utils - INFO - Fetching financial comparison for: SZ000895
+2026-04-19 15:02:35,325 - utils - INFO - Fetching financial comparison for: bj920000
+2026-04-19 15:02:44,696 - utils - INFO - Fetching financial comparison for: bj920000
+2026-04-19 15:03:44,331 - utils - INFO - Fetching financial comparison for: BJ920020
+2026-04-19 15:04:04,521 - utils - INFO - Fetching financial comparison for: BJ920000
+2026-04-19 15:04:08,358 - utils - INFO - Fetching financial comparison for: BJ920000
+2026-04-19 15:04:33,296 - utils - INFO - Fetching stock history: BJ920000 (A股)
+2026-04-19 15:04:33,955 - utils - WARNING - Function fetch_stock_history attempt 1 failed: 'date', retrying in 5s...
+2026-04-19 15:04:38,957 - utils - INFO - Fetching stock history: BJ920000 (A股)
+2026-04-19 15:04:39,535 - utils - WARNING - Function fetch_stock_history attempt 2 failed: 'date', retrying in 5s...
+2026-04-19 15:04:44,536 - utils - INFO - Fetching stock history: BJ920000 (A股)
+2026-04-19 15:04:45,093 - utils - ERROR - Function fetch_stock_history failed after 3 attempts: 'date'
+2026-04-19 15:04:52,040 - utils - INFO - Fetching stock history: BJ920000 (A股)
+2026-04-19 15:04:52,605 - utils - WARNING - Function fetch_stock_history attempt 1 failed: 'date', retrying in 5s...
+2026-04-19 15:04:57,608 - utils - INFO - Fetching stock history: BJ920000 (A股)
+2026-04-19 15:04:58,186 - utils - WARNING - Function fetch_stock_history attempt 2 failed: 'date', retrying in 5s...
+2026-04-19 15:05:03,191 - utils - INFO - Fetching stock history: BJ920000 (A股)
+2026-04-19 15:05:03,666 - utils - ERROR - Function fetch_stock_history failed after 3 attempts: 'date'
+2026-04-19 15:06:04,698 - utils - INFO - Fetching stock history: BJ920000 (A股)
+2026-04-19 15:06:05,286 - utils - WARNING - Function fetch_stock_history attempt 1 failed: 'date', retrying in 5s...
+2026-04-19 15:06:10,290 - utils - INFO - Fetching stock history: BJ920000 (A股)
+2026-04-19 15:06:10,911 - utils - WARNING - Function fetch_stock_history attempt 2 failed: 'date', retrying in 5s...
+2026-04-19 15:06:15,914 - utils - INFO - Fetching stock history: BJ920000 (A股)
+2026-04-19 15:06:16,443 - utils - ERROR - Function fetch_stock_history failed after 3 attempts: 'date'
+2026-04-19 15:11:44,780 - utils - INFO - Fetching stock history: bj92000 (A股)
+2026-04-19 15:11:44,782 - utils - INFO - Detected Beijing market stock, using specialized API
+2026-04-19 15:11:44,782 - utils - ERROR - Failed to fetch Beijing stock data: module 'akshare' has no attribute 'stock_zh_bj_spot_em'
+2026-04-19 15:11:44,782 - utils - WARNING - Function fetch_stock_history attempt 1 failed: module 'akshare' has no attribute 'stock_zh_bj_spot_em', retrying in 5s...
+2026-04-19 15:11:49,782 - utils - INFO - Fetching stock history: bj92000 (A股)
+2026-04-19 15:11:49,782 - utils - INFO - Detected Beijing market stock, using specialized API
+2026-04-19 15:11:49,782 - utils - ERROR - Failed to fetch Beijing stock data: module 'akshare' has no attribute 'stock_zh_bj_spot_em'
+2026-04-19 15:11:49,782 - utils - WARNING - Function fetch_stock_history attempt 2 failed: module 'akshare' has no attribute 'stock_zh_bj_spot_em', retrying in 5s...
+2026-04-19 15:11:54,783 - utils - INFO - Fetching stock history: bj92000 (A股)
+2026-04-19 15:11:54,783 - utils - INFO - Detected Beijing market stock, using specialized API
+2026-04-19 15:11:54,783 - utils - ERROR - Failed to fetch Beijing stock data: module 'akshare' has no attribute 'stock_zh_bj_spot_em'
+2026-04-19 15:11:54,783 - utils - ERROR - Function fetch_stock_history failed after 3 attempts: module 'akshare' has no attribute 'stock_zh_bj_spot_em'
+2026-04-19 15:12:51,607 - utils - INFO - Fetching stock history: sz002709 (A股)
+2026-04-19 15:12:52,897 - utils - INFO - Fetched 5 records for sz002709 (A股)
+2026-04-19 15:13:07,408 - utils - INFO - Fetching stock history: bj920000 (A股)
+2026-04-19 15:13:08,944 - utils - INFO - Fetched 5 records for bj920000 (A股)
+2026-04-19 15:13:23,517 - utils - INFO - Fetching stock history: bj920000 (A股)
+2026-04-19 15:13:24,260 - utils - INFO - Fetched 20 records for bj920000 (A股)
+2026-04-19 15:13:32,173 - utils - INFO - Fetching growth comparison for: BJ920000
+2026-04-19 15:13:32,394 - utils - INFO - Fetched 8 comparison records for BJ920000
+2026-04-19 15:14:22,149 - utils - INFO - Fetching financial comparison for: BJ920000
+2026-04-19 15:55:56,814 - utils - INFO - Fetching stock history: bj92000 (A股)
+2026-04-19 15:55:57,342 - utils - WARNING - Function fetch_stock_history attempt 1 failed: 'date', retrying in 5s...
+2026-04-19 15:56:02,345 - utils - INFO - Fetching stock history: bj92000 (A股)
+2026-04-19 15:56:02,702 - utils - WARNING - Function fetch_stock_history attempt 2 failed: 'date', retrying in 5s...
+2026-04-19 15:56:07,704 - utils - INFO - Fetching stock history: bj92000 (A股)
+2026-04-19 15:56:08,094 - utils - ERROR - Function fetch_stock_history failed after 3 attempts: 'date'
+2026-04-19 15:56:19,459 - utils - INFO - Fetching financial comparison for: SZ000895
+2026-04-19 15:56:28,295 - utils - INFO - Fetching stock history: bj920001 (A股)
+2026-04-19 15:56:29,500 - utils - INFO - Fetched 5 records for bj920001 (A股)
+2026-04-19 15:58:11,189 - utils - INFO - Fetching stock history: bj920001 (A股)
+2026-04-19 15:58:11,806 - utils - INFO - Fetched 68 records for bj920001 (A股)
+2026-04-19 16:27:54,429 - utils - INFO - Fetching stock history: bj92000 (A股)
+2026-04-19 16:27:54,940 - utils - WARNING - Function fetch_stock_history attempt 1 failed: 'date', retrying in 5s...
+2026-04-19 16:27:59,943 - utils - INFO - Fetching stock history: bj92000 (A股)
+2026-04-19 16:28:00,309 - utils - WARNING - Function fetch_stock_history attempt 2 failed: 'date', retrying in 5s...
+2026-04-19 16:28:05,311 - utils - INFO - Fetching stock history: bj92000 (A股)
+2026-04-19 16:28:05,779 - utils - ERROR - Function fetch_stock_history failed after 3 attempts: 'date'
+2026-04-19 16:28:17,325 - utils - INFO - Fetching stock history: bj920001 (A股)
+2026-04-19 16:28:18,523 - utils - INFO - Fetched 20 records for bj920001 (A股)
+2026-04-19 16:38:05,447 - utils - INFO - ==================================================
+2026-04-19 16:38:05,448 - utils - INFO - Starting to fetch all data in parallel...
+2026-04-19 16:38:05,448 - utils - INFO - Fetching financial data...
+2026-04-19 16:38:05,448 - utils - INFO - ==================================================
+2026-04-19 16:38:05,449 - utils - INFO - Starting to fetch all quote data sources in parallel...
+2026-04-19 16:38:05,449 - utils - INFO - Fetching financial comparison for: SZ000895
+2026-04-19 16:38:05,450 - utils - INFO - Fetching real-time quote data (沪深京A股) from Sina Finance...
+2026-04-19 16:38:05,451 - utils - INFO - Fetching real-time quote data (B股)...
+2026-04-19 16:38:05,452 - utils - INFO - Fetching real-time quote data (AH股)...
+2026-04-19 16:38:05,453 - utils - INFO - Fetching real-time quote data (科创版)...
+2026-04-19 16:38:05,454 - utils - INFO - Fetching real-time quote data (港股)...
+2026-04-19 16:38:05,766 - utils - INFO - Success: 财务报表
+2026-04-19 16:38:06,150 - utils - INFO - Success: 实时行情_B股 - 79 records
+2026-04-19 16:38:08,456 - utils - INFO - Success: 实时行情_科创版 - 607 records
+2026-04-19 16:38:10,092 - utils - INFO - Success: 实时行情_AH股 - 200 records
+2026-04-19 16:38:44,014 - utils - INFO - Success: 实时行情_沪深京 - 5505 records
+2026-04-19 16:39:04,717 - utils - INFO - Success: 实时行情_港股 - 2745 records
+2026-04-19 16:39:04,717 - utils - INFO - All quote data fetch completed: 5/5 succeeded
+2026-04-19 16:39:04,717 - utils - INFO - ==================================================
+2026-04-19 16:39:04,717 - utils - INFO - Success: 财报分析
+2026-04-19 16:39:04,717 - utils - INFO - ==================================================
+2026-04-19 16:39:04,718 - utils - INFO - Parallel fetch completed: 7 data sources succeeded
+2026-04-19 16:41:05,416 - utils - INFO - Fetching financial comparison for: bj92000
+2026-04-19 16:41:15,436 - utils - INFO - Fetching financial comparison for: bj920000
+2026-04-19 16:41:35,526 - utils - INFO - Fetching financial comparison for: bj920001
+2026-04-19 16:41:45,437 - utils - INFO - Fetching financial comparison for: SZ000895
+2026-04-19 16:41:56,318 - utils - INFO - Fetching financial comparison for: bj920000
+2026-04-19 16:42:09,996 - utils - INFO - Fetching financial comparison for: bj920000
+2026-04-19 16:42:29,257 - utils - INFO - Fetching growth comparison for: BJ920000
+2026-04-19 16:42:29,446 - utils - INFO - Fetched 8 comparison records for BJ920000
+2026-04-19 16:43:20,303 - utils - INFO - Fetching financial comparison for: SZ000895
+2026-04-19 16:43:25,110 - utils - INFO - Fetching financial comparison for: bj920000
+2026-04-19 16:44:30,536 - utils - INFO - Fetching financial comparison for: bj920000
+2026-04-19 17:08:48,825 - utils - INFO - Fetching financial comparison for: bj920000
+2026-04-19 17:09:03,961 - utils - INFO - Fetching financial comparison for: bj920000
+2026-04-19 17:13:20,376 - utils - INFO - Fetching financial comparison for: SZ000895
+2026-04-19 17:16:06,069 - utils - INFO - Fetching financial comparison for: bj920000
+2026-04-19 17:23:29,892 - utils - INFO - Fetching financial comparison for: BJ920000
+2026-04-19 17:57:18,702 - utils - INFO - Fetching financial comparison for: BJ920000
+2026-04-19 17:58:53,760 - utils - INFO - Fetching stock history: bj920000 (A股)
+2026-04-19 17:58:55,097 - utils - INFO - Fetched 20 records for bj920000 (A股)
+2026-04-19 17:59:01,649 - utils - INFO - Fetching stock history: bj920000 (A股)
+2026-04-19 17:59:02,279 - utils - INFO - Fetched 5 records for bj920000 (A股)
+2026-04-19 17:59:34,241 - utils - INFO - Fetching growth comparison for: BJ920000
+2026-04-19 17:59:34,451 - utils - INFO - Fetched 8 comparison records for BJ920000
+2026-04-19 18:37:23,964 - utils - INFO - Fetching stock history: BJ920000 (A股)
+2026-04-19 18:37:24,660 - utils - WARNING - Function fetch_stock_history attempt 1 failed: 'date', retrying in 5s...
+2026-04-19 18:37:29,663 - utils - INFO - Fetching stock history: BJ920000 (A股)
+2026-04-19 18:37:30,177 - utils - WARNING - Function fetch_stock_history attempt 2 failed: 'date', retrying in 5s...
+2026-04-19 18:37:35,180 - utils - INFO - Fetching stock history: BJ920000 (A股)
+2026-04-19 18:37:35,699 - utils - ERROR - Function fetch_stock_history failed after 3 attempts: 'date'
+2026-04-19 18:37:52,769 - utils - INFO - Fetching stock history: BJ920001 (A股)
+2026-04-19 18:37:53,285 - utils - WARNING - Function fetch_stock_history attempt 1 failed: 'date', retrying in 5s...
+2026-04-19 18:37:58,288 - utils - INFO - Fetching stock history: BJ920001 (A股)
+2026-04-19 18:37:58,866 - utils - WARNING - Function fetch_stock_history attempt 2 failed: 'date', retrying in 5s...
+2026-04-19 18:38:03,868 - utils - INFO - Fetching stock history: BJ920001 (A股)
+2026-04-19 18:38:04,345 - utils - ERROR - Function fetch_stock_history failed after 3 attempts: 'date'
+2026-04-19 18:38:16,621 - utils - INFO - Fetching financial comparison for: BJ920000
+2026-04-19 18:38:23,056 - utils - INFO - Fetching stock history: BJ920020 (B股)
+2026-04-19 18:38:23,431 - utils - WARNING - Function fetch_stock_history attempt 1 failed: 'date', retrying in 5s...
+2026-04-19 18:38:28,433 - utils - INFO - Fetching stock history: BJ920020 (B股)
+2026-04-19 18:38:28,932 - utils - WARNING - Function fetch_stock_history attempt 2 failed: 'date', retrying in 5s...
+2026-04-19 18:38:33,934 - utils - INFO - Fetching stock history: BJ920020 (B股)
+2026-04-19 18:38:34,338 - utils - ERROR - Function fetch_stock_history failed after 3 attempts: 'date'
+2026-04-19 18:38:40,209 - utils - INFO - Fetching stock history: BJ920020 (A股)
+2026-04-19 18:38:40,550 - utils - WARNING - Function fetch_stock_history attempt 1 failed: 'date', retrying in 5s...
+2026-04-19 18:38:45,554 - utils - INFO - Fetching stock history: BJ920020 (A股)
+2026-04-19 18:38:45,938 - utils - WARNING - Function fetch_stock_history attempt 2 failed: 'date', retrying in 5s...
+2026-04-19 18:38:50,941 - utils - INFO - Fetching stock history: BJ920020 (A股)
+2026-04-19 18:38:51,411 - utils - ERROR - Function fetch_stock_history failed after 3 attempts: 'date'
+2026-04-19 18:39:07,588 - utils - INFO - Fetching stock history: bj920001 (A股)
+2026-04-19 18:39:08,996 - utils - INFO - Fetched 5 records for bj920001 (A股)
+2026-04-19 18:39:14,284 - utils - INFO - Fetching stock history: bj920000 (A股)
+2026-04-19 18:39:15,467 - utils - INFO - Fetched 20 records for bj920000 (A股)
+2026-04-19 18:41:43,455 - utils - INFO - Fetching financial comparison for: SZ000895
+2026-04-19 21:42:35,157 - utils - INFO - Fetching growth comparison for: BJ20000
+2026-04-19 21:42:35,439 - utils - INFO - Fetched 0 comparison records for BJ20000
+2026-04-19 21:42:46,903 - utils - INFO - Fetching growth comparison for: BJ920001
+2026-04-19 21:42:47,125 - utils - INFO - Fetched 8 comparison records for BJ920001
+2026-04-19 22:08:17,814 - utils - INFO - Fetching growth comparison for: BJ920001
+2026-04-19 22:08:18,099 - utils - INFO - Fetched 8 comparison records for BJ920001
+2026-04-20 13:14:06,758 - utils - INFO - Fetching financial comparison for: SZ000895
+2026-04-20 13:21:16,881 - utils - INFO - Fetching financial comparison for: SZ000895
+2026-04-20 13:22:03,108 - utils - INFO - Fetching growth comparison for: BJ920001
+2026-04-20 13:22:03,313 - utils - INFO - Fetched 8 comparison records for BJ920001
+2026-04-20 18:05:18,106 - utils - INFO - Fetching stock history: bj920001 (A股)
+2026-04-20 18:05:20,148 - utils - INFO - Fetched 6 records for bj920001 (A股)
+2026-04-20 18:12:35,939 - utils - INFO - ==================================================
+2026-04-20 18:12:35,939 - utils - INFO - Starting to fetch all data in parallel...
+2026-04-20 18:12:35,939 - utils - INFO - Fetching financial data...
+2026-04-20 18:12:35,941 - utils - INFO - ==================================================
+2026-04-20 18:12:35,941 - utils - INFO - Starting to fetch all quote data sources in parallel...
+2026-04-20 18:12:35,941 - utils - INFO - Fetching financial analysis for: 20241231
+2026-04-20 18:12:35,942 - utils - INFO - Fetching real-time quote data (沪深京A股) from Sina Finance...
+2026-04-20 18:12:35,943 - utils - INFO - Fetching real-time quote data (B股)...
+2026-04-20 18:12:35,943 - utils - INFO - Fetching real-time quote data (AH股)...
+2026-04-20 18:12:35,944 - utils - INFO - Fetching real-time quote data (科创版)...
+2026-04-20 18:12:35,947 - utils - INFO - Fetching real-time quote data (港股)...
+2026-04-20 18:12:36,470 - utils - INFO - Success: 实时行情_B股 - 79 records
+2026-04-20 18:12:36,482 - utils - INFO - Success: 财务报表
+2026-04-20 18:12:38,586 - utils - INFO - Success: 实时行情_科创版 - 607 records
+2026-04-20 18:12:39,899 - utils - INFO - Success: 实时行情_AH股 - 200 records
+2026-04-20 18:13:02,922 - utils - INFO - Success: 实时行情_沪深京 - 5506 records
+2026-04-20 18:13:03,206 - utils - INFO - Success: 实时行情_港股 - 2743 records
+2026-04-20 18:13:03,207 - utils - INFO - All quote data fetch completed: 5/5 succeeded
+2026-04-20 18:13:03,207 - utils - INFO - ==================================================
+2026-04-20 18:13:03,207 - utils - ERROR - Financial comparison data fetch failed: name 'future_financial_comparison' is not defined
+2026-04-20 18:13:03,208 - utils - INFO - ==================================================
+2026-04-20 18:13:03,208 - utils - INFO - Parallel fetch completed: 6 data sources succeeded
+2026-04-20 20:05:41,381 - utils - INFO - Fetching financial analysis...
+2026-04-20 20:05:41,382 - utils - INFO - 正在获取财报分析数据: 20251231
+2026-04-20 20:05:44,578 - utils - INFO - 成功获取 20251231 财报数据，共 3981 条
+2026-04-20 23:13:12,006 - utils - INFO - ==================================================
+2026-04-20 23:13:12,012 - utils - INFO - Starting to fetch all data in parallel...
+2026-04-20 23:13:12,021 - utils - INFO - Fetching financial data...
+2026-04-20 23:13:12,028 - utils - INFO - ==================================================
+2026-04-20 23:13:12,030 - utils - INFO - Starting to fetch all quote data sources in parallel...
+2026-04-20 23:13:12,038 - utils - INFO - Fetching financial analysis...
+2026-04-20 23:13:12,041 - utils - INFO - 正在获取财报分析数据: 20261231
+2026-04-20 23:13:12,041 - utils - INFO - Fetching real-time quote data (沪深京A股) from Sina Finance...
+2026-04-20 23:13:12,044 - utils - INFO - Fetching real-time quote data (B股)...
+2026-04-20 23:13:12,062 - utils - INFO - Fetching real-time quote data (AH股)...
+2026-04-20 23:13:12,067 - utils - INFO - Fetching real-time quote data (科创版)...
+2026-04-20 23:13:12,069 - utils - INFO - Fetching real-time quote data (港股)...
+2026-04-20 23:13:12,237 - utils - ERROR - 获取财报数据失败 20261231: 'NoneType' object is not subscriptable
+2026-04-20 23:13:12,237 - utils - WARNING - Function fetch_data attempt 1 failed: 'NoneType' object is not subscriptable, retrying in 5s...
+2026-04-20 23:13:12,262 - utils - INFO - Success: 财务报表
+2026-04-20 23:13:12,684 - utils - INFO - Success: 实时行情_B股 - 79 records
+2026-04-20 23:13:14,724 - utils - INFO - Success: 实时行情_科创版 - 607 records
+2026-04-20 23:13:15,549 - utils - INFO - Success: 实时行情_AH股 - 200 records
+2026-04-20 23:13:17,240 - utils - INFO - 正在获取财报分析数据: 20261231
+2026-04-20 23:13:17,321 - utils - ERROR - 获取财报数据失败 20261231: 'NoneType' object is not subscriptable
+2026-04-20 23:13:17,321 - utils - WARNING - Function fetch_data attempt 2 failed: 'NoneType' object is not subscriptable, retrying in 5s...
+2026-04-20 23:13:22,322 - utils - INFO - 正在获取财报分析数据: 20261231
+2026-04-20 23:13:22,477 - utils - ERROR - 获取财报数据失败 20261231: 'NoneType' object is not subscriptable
+2026-04-20 23:13:22,478 - utils - ERROR - Function fetch_data failed after 3 attempts: 'NoneType' object is not subscriptable
+2026-04-20 23:13:22,478 - utils - ERROR - Failed to fetch financial analysis: 'NoneType' object is not subscriptable
+2026-04-20 23:13:22,478 - utils - WARNING - Function fetch_financial_analysis attempt 1 failed: 'NoneType' object is not subscriptable, retrying in 5s...
+2026-04-20 23:13:27,478 - utils - INFO - Fetching financial analysis...
+2026-04-20 23:13:27,478 - utils - INFO - 正在获取财报分析数据: 20261231
+2026-04-20 23:13:27,547 - utils - ERROR - 获取财报数据失败 20261231: 'NoneType' object is not subscriptable
+2026-04-20 23:13:27,548 - utils - WARNING - Function fetch_data attempt 1 failed: 'NoneType' object is not subscriptable, retrying in 5s...
+2026-04-20 23:13:32,550 - utils - INFO - 正在获取财报分析数据: 20261231
+2026-04-20 23:13:32,707 - utils - ERROR - 获取财报数据失败 20261231: 'NoneType' object is not subscriptable
+2026-04-20 23:13:32,726 - utils - WARNING - Function fetch_data attempt 2 failed: 'NoneType' object is not subscriptable, retrying in 5s...
+2026-04-20 23:13:37,728 - utils - INFO - 正在获取财报分析数据: 20261231
+2026-04-20 23:13:37,838 - utils - ERROR - 获取财报数据失败 20261231: 'NoneType' object is not subscriptable
+2026-04-20 23:13:37,838 - utils - ERROR - Function fetch_data failed after 3 attempts: 'NoneType' object is not subscriptable
+2026-04-20 23:13:37,838 - utils - ERROR - Failed to fetch financial analysis: 'NoneType' object is not subscriptable
+2026-04-20 23:13:37,839 - utils - WARNING - Function fetch_financial_analysis attempt 2 failed: 'NoneType' object is not subscriptable, retrying in 5s...
+2026-04-20 23:13:42,863 - utils - INFO - Fetching financial analysis...
+2026-04-20 23:13:42,867 - utils - INFO - 正在获取财报分析数据: 20261231
+2026-04-20 23:13:43,020 - utils - ERROR - 获取财报数据失败 20261231: 'NoneType' object is not subscriptable
+2026-04-20 23:13:43,052 - utils - WARNING - Function fetch_data attempt 1 failed: 'NoneType' object is not subscriptable, retrying in 5s...
+2026-04-20 23:13:48,073 - utils - INFO - 正在获取财报分析数据: 20261231
+2026-04-20 23:13:48,206 - utils - ERROR - 获取财报数据失败 20261231: 'NoneType' object is not subscriptable
+2026-04-20 23:13:48,228 - utils - WARNING - Function fetch_data attempt 2 failed: 'NoneType' object is not subscriptable, retrying in 5s...
+2026-04-20 23:13:50,157 - utils - INFO - Success: 实时行情_港股 - 2743 records
+2026-04-20 23:13:51,838 - utils - INFO - Success: 实时行情_沪深京 - 5506 records
+2026-04-20 23:13:51,840 - utils - INFO - All quote data fetch completed: 5/5 succeeded
+2026-04-20 23:13:51,840 - utils - INFO - ==================================================
+2026-04-20 23:13:51,840 - utils - ERROR - Financial comparison data fetch failed: name 'future_financial_comparison' is not defined
+2026-04-20 23:13:53,230 - utils - INFO - 正在获取财报分析数据: 20261231
+2026-04-20 23:13:53,408 - utils - ERROR - 获取财报数据失败 20261231: 'NoneType' object is not subscriptable
+2026-04-20 23:13:53,408 - utils - ERROR - Function fetch_data failed after 3 attempts: 'NoneType' object is not subscriptable
+2026-04-20 23:13:53,408 - utils - ERROR - Failed to fetch financial analysis: 'NoneType' object is not subscriptable
+2026-04-20 23:13:53,409 - utils - ERROR - Function fetch_financial_analysis failed after 3 attempts: 'NoneType' object is not subscriptable
+2026-04-20 23:13:53,409 - utils - INFO - ==================================================
+2026-04-20 23:13:53,409 - utils - INFO - Parallel fetch completed: 6 data sources succeeded
+2026-04-20 23:52:00,596 - utils - INFO - Fetching financial analysis...
+2026-04-20 23:52:00,597 - utils - INFO - 正在获取财报分析数据: 20260331
+2026-04-20 23:52:10,650 - utils - ERROR - 获取财报数据失败 20260331: HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?sortColumns=UPDATE_DATE%2CSECURITY_CODE&sortTypes=-1%2C-1&pageSize=500&pageNumber=1&reportName=RPT_LICO_FN_CPD&columns=ALL&filter=%28REPORTDATE%3D%272026-03-31%27%29 (Caused by NameResolutionError("HTTPSConnection(host='datacenter-web.eastmoney.com', port=443): Failed to resolve 'datacenter-web.eastmoney.com' ([Errno 11002] getaddrinfo failed)"))
+2026-04-20 23:52:10,650 - utils - WARNING - Function fetch_data attempt 1 failed: HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?sortColumns=UPDATE_DATE%2CSECURITY_CODE&sortTypes=-1%2C-1&pageSize=500&pageNumber=1&reportName=RPT_LICO_FN_CPD&columns=ALL&filter=%28REPORTDATE%3D%272026-03-31%27%29 (Caused by NameResolutionError("HTTPSConnection(host='datacenter-web.eastmoney.com', port=443): Failed to resolve 'datacenter-web.eastmoney.com' ([Errno 11002] getaddrinfo failed)")), retrying in 5s...
+2026-04-20 23:52:15,650 - utils - INFO - 正在获取财报分析数据: 20260331
+2026-04-20 23:52:15,667 - utils - ERROR - 获取财报数据失败 20260331: HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?sortColumns=UPDATE_DATE%2CSECURITY_CODE&sortTypes=-1%2C-1&pageSize=500&pageNumber=1&reportName=RPT_LICO_FN_CPD&columns=ALL&filter=%28REPORTDATE%3D%272026-03-31%27%29 (Caused by NameResolutionError("HTTPSConnection(host='datacenter-web.eastmoney.com', port=443): Failed to resolve 'datacenter-web.eastmoney.com' ([Errno 11002] getaddrinfo failed)"))
+2026-04-20 23:52:15,667 - utils - WARNING - Function fetch_data attempt 2 failed: HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?sortColumns=UPDATE_DATE%2CSECURITY_CODE&sortTypes=-1%2C-1&pageSize=500&pageNumber=1&reportName=RPT_LICO_FN_CPD&columns=ALL&filter=%28REPORTDATE%3D%272026-03-31%27%29 (Caused by NameResolutionError("HTTPSConnection(host='datacenter-web.eastmoney.com', port=443): Failed to resolve 'datacenter-web.eastmoney.com' ([Errno 11002] getaddrinfo failed)")), retrying in 5s...
+2026-04-20 23:52:20,668 - utils - INFO - 正在获取财报分析数据: 20260331
+2026-04-20 23:52:20,675 - utils - ERROR - 获取财报数据失败 20260331: HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?sortColumns=UPDATE_DATE%2CSECURITY_CODE&sortTypes=-1%2C-1&pageSize=500&pageNumber=1&reportName=RPT_LICO_FN_CPD&columns=ALL&filter=%28REPORTDATE%3D%272026-03-31%27%29 (Caused by NameResolutionError("HTTPSConnection(host='datacenter-web.eastmoney.com', port=443): Failed to resolve 'datacenter-web.eastmoney.com' ([Errno 11002] getaddrinfo failed)"))
+2026-04-20 23:52:20,675 - utils - ERROR - Function fetch_data failed after 3 attempts: HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?sortColumns=UPDATE_DATE%2CSECURITY_CODE&sortTypes=-1%2C-1&pageSize=500&pageNumber=1&reportName=RPT_LICO_FN_CPD&columns=ALL&filter=%28REPORTDATE%3D%272026-03-31%27%29 (Caused by NameResolutionError("HTTPSConnection(host='datacenter-web.eastmoney.com', port=443): Failed to resolve 'datacenter-web.eastmoney.com' ([Errno 11002] getaddrinfo failed)"))
+2026-04-20 23:52:20,675 - utils - ERROR - Failed to fetch financial analysis: HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?sortColumns=UPDATE_DATE%2CSECURITY_CODE&sortTypes=-1%2C-1&pageSize=500&pageNumber=1&reportName=RPT_LICO_FN_CPD&columns=ALL&filter=%28REPORTDATE%3D%272026-03-31%27%29 (Caused by NameResolutionError("HTTPSConnection(host='datacenter-web.eastmoney.com', port=443): Failed to resolve 'datacenter-web.eastmoney.com' ([Errno 11002] getaddrinfo failed)"))
+2026-04-20 23:52:20,675 - utils - WARNING - Function fetch_financial_analysis attempt 1 failed: HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?sortColumns=UPDATE_DATE%2CSECURITY_CODE&sortTypes=-1%2C-1&pageSize=500&pageNumber=1&reportName=RPT_LICO_FN_CPD&columns=ALL&filter=%28REPORTDATE%3D%272026-03-31%27%29 (Caused by NameResolutionError("HTTPSConnection(host='datacenter-web.eastmoney.com', port=443): Failed to resolve 'datacenter-web.eastmoney.com' ([Errno 11002] getaddrinfo failed)")), retrying in 5s...
+2026-04-20 23:52:25,676 - utils - INFO - Fetching financial analysis...
+2026-04-20 23:52:25,676 - utils - INFO - 正在获取财报分析数据: 20260331
+2026-04-20 23:52:25,684 - utils - ERROR - 获取财报数据失败 20260331: HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?sortColumns=UPDATE_DATE%2CSECURITY_CODE&sortTypes=-1%2C-1&pageSize=500&pageNumber=1&reportName=RPT_LICO_FN_CPD&columns=ALL&filter=%28REPORTDATE%3D%272026-03-31%27%29 (Caused by NameResolutionError("HTTPSConnection(host='datacenter-web.eastmoney.com', port=443): Failed to resolve 'datacenter-web.eastmoney.com' ([Errno 11002] getaddrinfo failed)"))
+2026-04-20 23:52:25,684 - utils - WARNING - Function fetch_data attempt 1 failed: HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?sortColumns=UPDATE_DATE%2CSECURITY_CODE&sortTypes=-1%2C-1&pageSize=500&pageNumber=1&reportName=RPT_LICO_FN_CPD&columns=ALL&filter=%28REPORTDATE%3D%272026-03-31%27%29 (Caused by NameResolutionError("HTTPSConnection(host='datacenter-web.eastmoney.com', port=443): Failed to resolve 'datacenter-web.eastmoney.com' ([Errno 11002] getaddrinfo failed)")), retrying in 5s...
+2026-04-20 23:52:30,685 - utils - INFO - 正在获取财报分析数据: 20260331
+2026-04-20 23:52:30,686 - utils - ERROR - 获取财报数据失败 20260331: HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?sortColumns=UPDATE_DATE%2CSECURITY_CODE&sortTypes=-1%2C-1&pageSize=500&pageNumber=1&reportName=RPT_LICO_FN_CPD&columns=ALL&filter=%28REPORTDATE%3D%272026-03-31%27%29 (Caused by NameResolutionError("HTTPSConnection(host='datacenter-web.eastmoney.com', port=443): Failed to resolve 'datacenter-web.eastmoney.com' ([Errno 11002] getaddrinfo failed)"))
+2026-04-20 23:52:30,687 - utils - WARNING - Function fetch_data attempt 2 failed: HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?sortColumns=UPDATE_DATE%2CSECURITY_CODE&sortTypes=-1%2C-1&pageSize=500&pageNumber=1&reportName=RPT_LICO_FN_CPD&columns=ALL&filter=%28REPORTDATE%3D%272026-03-31%27%29 (Caused by NameResolutionError("HTTPSConnection(host='datacenter-web.eastmoney.com', port=443): Failed to resolve 'datacenter-web.eastmoney.com' ([Errno 11002] getaddrinfo failed)")), retrying in 5s...
+2026-04-20 23:52:35,687 - utils - INFO - 正在获取财报分析数据: 20260331
+2026-04-20 23:52:35,694 - utils - ERROR - 获取财报数据失败 20260331: HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?sortColumns=UPDATE_DATE%2CSECURITY_CODE&sortTypes=-1%2C-1&pageSize=500&pageNumber=1&reportName=RPT_LICO_FN_CPD&columns=ALL&filter=%28REPORTDATE%3D%272026-03-31%27%29 (Caused by NameResolutionError("HTTPSConnection(host='datacenter-web.eastmoney.com', port=443): Failed to resolve 'datacenter-web.eastmoney.com' ([Errno 11002] getaddrinfo failed)"))
+2026-04-20 23:52:35,695 - utils - ERROR - Function fetch_data failed after 3 attempts: HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?sortColumns=UPDATE_DATE%2CSECURITY_CODE&sortTypes=-1%2C-1&pageSize=500&pageNumber=1&reportName=RPT_LICO_FN_CPD&columns=ALL&filter=%28REPORTDATE%3D%272026-03-31%27%29 (Caused by NameResolutionError("HTTPSConnection(host='datacenter-web.eastmoney.com', port=443): Failed to resolve 'datacenter-web.eastmoney.com' ([Errno 11002] getaddrinfo failed)"))
+2026-04-20 23:52:35,695 - utils - ERROR - Failed to fetch financial analysis: HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?sortColumns=UPDATE_DATE%2CSECURITY_CODE&sortTypes=-1%2C-1&pageSize=500&pageNumber=1&reportName=RPT_LICO_FN_CPD&columns=ALL&filter=%28REPORTDATE%3D%272026-03-31%27%29 (Caused by NameResolutionError("HTTPSConnection(host='datacenter-web.eastmoney.com', port=443): Failed to resolve 'datacenter-web.eastmoney.com' ([Errno 11002] getaddrinfo failed)"))
+2026-04-20 23:52:35,695 - utils - WARNING - Function fetch_financial_analysis attempt 2 failed: HTTPSConnectionPool(host='datacenter-web.eastmoney.com', port=443): Max retries exceeded with url: /api/data/v1/get?sortColumns=UPDATE_DATE%2CSECURITY_CODE&sortTypes=-1%2C-1&pageSize=500&pageNumber=1&reportName=RPT_LICO_FN_CPD&columns=ALL&filter=%28REPORTDATE%3D%272026-03-31%27%29 (Caused by NameResolutionError("HTTPSConnection(host='datacenter-web.eastmoney.com', port=443): Failed to resolve 'datacenter-web.eastmoney.com' ([Errno 11002] getaddrinfo failed)")), retrying in 5s...
+2026-04-20 23:52:40,696 - utils - INFO - Fetching financial analysis...
+2026-04-20 23:52:40,696 - utils - INFO - 正在获取财报分析数据: 20260331
+2026-04-20 23:52:48,863 - utils - INFO - 成功获取 20260331 财报数据，共 307 条
+2026-04-21 23:48:40,267 - utils - INFO - Fetching stock history: bj920001 (A股)
+2026-04-21 23:48:53,391 - utils - INFO - Fetched 21 records for bj920001 (A股)
+2026-04-22 11:06:47,771 - utils - INFO - ==================================================
+2026-04-22 11:06:47,771 - utils - INFO - Starting to fetch all data in parallel...
+2026-04-22 11:06:47,772 - utils - INFO - Fetching financial data...
+2026-04-22 11:06:47,772 - utils - INFO - ==================================================
+2026-04-22 11:06:47,772 - utils - INFO - Starting to fetch all quote data sources in parallel...
+2026-04-22 11:06:47,773 - utils - INFO - Fetching financial analysis...
+2026-04-22 11:06:47,773 - utils - INFO - 正在获取财报分析数据: 20261231
+2026-04-22 11:06:47,773 - utils - INFO - Fetching real-time quote data (沪深京A股) from Sina Finance...
+2026-04-22 11:06:47,774 - utils - INFO - Fetching real-time quote data (B股)...
+2026-04-22 11:06:47,774 - utils - INFO - Fetching real-time quote data (AH股)...
+2026-04-22 11:06:47,775 - utils - INFO - Fetching real-time quote data (科创版)...
+2026-04-22 11:06:47,775 - utils - INFO - Fetching real-time quote data (港股)...
+2026-04-22 11:06:47,943 - utils - ERROR - 获取财报数据失败 20261231: 'NoneType' object is not subscriptable
+2026-04-22 11:06:47,944 - utils - WARNING - Function fetch_data attempt 1 failed: 'NoneType' object is not subscriptable, retrying in 5s...
+2026-04-22 11:06:48,347 - utils - INFO - Success: 财务报表
+2026-04-22 11:06:48,347 - utils - INFO - Success: 实时行情_B股 - 79 records
+2026-04-22 11:06:50,493 - utils - INFO - Success: 实时行情_科创版 - 608 records
+2026-04-22 11:06:51,268 - utils - INFO - Success: 实时行情_AH股 - 200 records
+2026-04-22 11:06:52,945 - utils - INFO - 正在获取财报分析数据: 20261231
+2026-04-22 11:06:52,997 - utils - ERROR - 获取财报数据失败 20261231: 'NoneType' object is not subscriptable
+2026-04-22 11:06:52,997 - utils - WARNING - Function fetch_data attempt 2 failed: 'NoneType' object is not subscriptable, retrying in 5s...
+2026-04-22 11:06:56,914 - utils - INFO - Success: 实时行情_港股 - 2744 records
+2026-04-22 11:06:57,999 - utils - INFO - 正在获取财报分析数据: 20261231
+2026-04-22 11:06:58,163 - utils - ERROR - 获取财报数据失败 20261231: 'NoneType' object is not subscriptable
+2026-04-22 11:06:58,163 - utils - ERROR - Function fetch_data failed after 3 attempts: 'NoneType' object is not subscriptable
+2026-04-22 11:06:58,164 - utils - ERROR - Failed to fetch financial analysis: 'NoneType' object is not subscriptable
+2026-04-22 11:06:58,164 - utils - WARNING - Function fetch_financial_analysis attempt 1 failed: 'NoneType' object is not subscriptable, retrying in 5s...
+2026-04-22 11:07:03,165 - utils - INFO - Fetching financial analysis...
+2026-04-22 11:07:03,165 - utils - INFO - 正在获取财报分析数据: 20261231
+2026-04-22 11:07:03,231 - utils - ERROR - 获取财报数据失败 20261231: 'NoneType' object is not subscriptable
+2026-04-22 11:07:03,231 - utils - WARNING - Function fetch_data attempt 1 failed: 'NoneType' object is not subscriptable, retrying in 5s...
+2026-04-22 11:07:08,232 - utils - INFO - 正在获取财报分析数据: 20261231
+2026-04-22 11:07:08,375 - utils - ERROR - 获取财报数据失败 20261231: 'NoneType' object is not subscriptable
+2026-04-22 11:07:08,375 - utils - WARNING - Function fetch_data attempt 2 failed: 'NoneType' object is not subscriptable, retrying in 5s...
+2026-04-22 11:07:13,376 - utils - INFO - 正在获取财报分析数据: 20261231
+2026-04-22 11:07:13,478 - utils - ERROR - 获取财报数据失败 20261231: 'NoneType' object is not subscriptable
+2026-04-22 11:07:13,478 - utils - ERROR - Function fetch_data failed after 3 attempts: 'NoneType' object is not subscriptable
+2026-04-22 11:07:13,478 - utils - ERROR - Failed to fetch financial analysis: 'NoneType' object is not subscriptable
+2026-04-22 11:07:13,478 - utils - WARNING - Function fetch_financial_analysis attempt 2 failed: 'NoneType' object is not subscriptable, retrying in 5s...
+2026-04-22 11:07:18,480 - utils - INFO - Fetching financial analysis...
+2026-04-22 11:07:18,481 - utils - INFO - 正在获取财报分析数据: 20261231
+2026-04-22 11:07:18,638 - utils - ERROR - 获取财报数据失败 20261231: 'NoneType' object is not subscriptable
+2026-04-22 11:07:18,648 - utils - WARNING - Function fetch_data attempt 1 failed: 'NoneType' object is not subscriptable, retrying in 5s...
+2026-04-22 11:07:20,692 - utils - INFO - Success: 实时行情_沪深京 - 5360 records
+2026-04-22 11:07:20,692 - utils - INFO - All quote data fetch completed: 5/5 succeeded
+2026-04-22 11:07:20,692 - utils - INFO - ==================================================
+2026-04-22 11:07:20,692 - utils - ERROR - Financial comparison data fetch failed: name 'future_financial_comparison' is not defined
+2026-04-22 11:07:23,651 - utils - INFO - 正在获取财报分析数据: 20261231
+2026-04-22 11:07:23,704 - utils - ERROR - 获取财报数据失败 20261231: 'NoneType' object is not subscriptable
+2026-04-22 11:07:23,704 - utils - WARNING - Function fetch_data attempt 2 failed: 'NoneType' object is not subscriptable, retrying in 5s...
+2026-04-22 11:07:28,705 - utils - INFO - 正在获取财报分析数据: 20261231
+2026-04-22 11:07:28,860 - utils - ERROR - 获取财报数据失败 20261231: 'NoneType' object is not subscriptable
+2026-04-22 11:07:28,860 - utils - ERROR - Function fetch_data failed after 3 attempts: 'NoneType' object is not subscriptable
+2026-04-22 11:07:28,860 - utils - ERROR - Failed to fetch financial analysis: 'NoneType' object is not subscriptable
+2026-04-22 11:07:28,860 - utils - ERROR - Function fetch_financial_analysis failed after 3 attempts: 'NoneType' object is not subscriptable
+2026-04-22 11:07:28,860 - utils - INFO - ==================================================
+2026-04-22 11:07:28,860 - utils - INFO - Parallel fetch completed: 6 data sources succeeded
+2026-04-22 11:25:20,132 - utils - INFO - Fetching financial analysis...
+2026-04-22 11:25:20,132 - utils - INFO - 正在获取财报分析数据: 20260630
+2026-04-22 11:25:20,307 - utils - ERROR - 获取财报数据失败 20260630: 'NoneType' object is not subscriptable
+2026-04-22 11:25:20,307 - utils - WARNING - Function fetch_data attempt 1 failed: 'NoneType' object is not subscriptable, retrying in 5s...
+2026-04-22 11:25:25,309 - utils - INFO - 正在获取财报分析数据: 20260630
+2026-04-22 11:25:25,368 - utils - ERROR - 获取财报数据失败 20260630: 'NoneType' object is not subscriptable
+2026-04-22 11:25:25,369 - utils - WARNING - Function fetch_data attempt 2 failed: 'NoneType' object is not subscriptable, retrying in 5s...
+2026-04-22 11:25:30,371 - utils - INFO - 正在获取财报分析数据: 20260630
+2026-04-22 11:25:30,470 - utils - ERROR - 获取财报数据失败 20260630: 'NoneType' object is not subscriptable
+2026-04-22 11:25:30,470 - utils - ERROR - Function fetch_data failed after 3 attempts: 'NoneType' object is not subscriptable
+2026-04-22 11:25:30,470 - utils - ERROR - Failed to fetch financial analysis: 'NoneType' object is not subscriptable
+2026-04-22 11:25:30,470 - utils - WARNING - Function fetch_financial_analysis attempt 1 failed: 'NoneType' object is not subscriptable, retrying in 5s...
+2026-04-22 11:25:35,471 - utils - INFO - Fetching financial analysis...
+2026-04-22 11:25:35,471 - utils - INFO - 正在获取财报分析数据: 20260630
+2026-04-22 11:25:35,542 - utils - ERROR - 获取财报数据失败 20260630: 'NoneType' object is not subscriptable
+2026-04-22 11:25:35,542 - utils - WARNING - Function fetch_data attempt 1 failed: 'NoneType' object is not subscriptable, retrying in 5s...
+2026-04-22 11:25:40,543 - utils - INFO - 正在获取财报分析数据: 20260630
+2026-04-22 11:25:40,648 - utils - ERROR - 获取财报数据失败 20260630: 'NoneType' object is not subscriptable
+2026-04-22 11:25:40,648 - utils - WARNING - Function fetch_data attempt 2 failed: 'NoneType' object is not subscriptable, retrying in 5s...
+2026-04-22 11:25:43,850 - utils - INFO - Fetching stock history: bj920001 (A股)
+2026-04-22 11:25:44,513 - utils - INFO - Fetched 5 records for bj920001 (A股)
+2026-04-22 11:25:45,650 - utils - INFO - 正在获取财报分析数据: 20260630
+2026-04-22 11:25:45,730 - utils - ERROR - 获取财报数据失败 20260630: 'NoneType' object is not subscriptable
+2026-04-22 11:25:45,730 - utils - ERROR - Function fetch_data failed after 3 attempts: 'NoneType' object is not subscriptable
+2026-04-22 11:25:45,730 - utils - ERROR - Failed to fetch financial analysis: 'NoneType' object is not subscriptable
+2026-04-22 11:25:45,730 - utils - WARNING - Function fetch_financial_analysis attempt 2 failed: 'NoneType' object is not subscriptable, retrying in 5s...
+2026-04-22 11:25:50,731 - utils - INFO - Fetching financial analysis...
+2026-04-22 11:25:50,732 - utils - INFO - 正在获取财报分析数据: 20260630
+2026-04-22 11:25:50,856 - utils - ERROR - 获取财报数据失败 20260630: 'NoneType' object is not subscriptable
+2026-04-22 11:25:50,856 - utils - WARNING - Function fetch_data attempt 1 failed: 'NoneType' object is not subscriptable, retrying in 5s...
+2026-04-22 11:25:55,857 - utils - INFO - 正在获取财报分析数据: 20260630
+2026-04-22 11:25:55,908 - utils - ERROR - 获取财报数据失败 20260630: 'NoneType' object is not subscriptable
+2026-04-22 11:25:55,909 - utils - WARNING - Function fetch_data attempt 2 failed: 'NoneType' object is not subscriptable, retrying in 5s...
+2026-04-22 11:26:00,909 - utils - INFO - 正在获取财报分析数据: 20260630
+2026-04-22 11:26:01,099 - utils - ERROR - 获取财报数据失败 20260630: 'NoneType' object is not subscriptable
+2026-04-22 11:26:01,100 - utils - ERROR - Function fetch_data failed after 3 attempts: 'NoneType' object is not subscriptable
+2026-04-22 11:26:01,100 - utils - ERROR - Failed to fetch financial analysis: 'NoneType' object is not subscriptable
+2026-04-22 11:26:01,100 - utils - ERROR - Function fetch_financial_analysis failed after 3 attempts: 'NoneType' object is not subscriptable
+2026-04-22 11:26:28,425 - utils - INFO - Fetching financial analysis...
+2026-04-22 11:26:28,425 - utils - INFO - 正在获取财报分析数据: 20250630
+2026-04-22 11:26:37,883 - utils - INFO - 成功获取 20250630 财报数据，共 11454 条
+2026-04-22 11:35:30,075 - utils - INFO - Fetching stock history: bj920001 (A股)
+2026-04-22 11:35:31,091 - utils - INFO - Fetched 5 records for bj920001 (A股)
+2026-04-22 11:36:25,987 - utils - INFO - Fetching financial analysis...
+2026-04-22 11:36:25,987 - utils - INFO - 正在获取财报分析数据: 20250930
+2026-04-22 11:36:29,969 - utils - INFO - 成功获取 20250930 财报数据，共 5853 条
+2026-04-22 11:44:18,482 - utils - INFO - ==================================================
+2026-04-22 11:44:18,482 - utils - INFO - Starting to fetch quote data only...
+2026-04-22 11:44:18,482 - utils - INFO - ==================================================
+2026-04-22 11:44:18,482 - utils - INFO - Starting to fetch all quote data sources in parallel...
+2026-04-22 11:44:18,483 - utils - INFO - Fetching real-time quote data (沪深京A股) from Sina Finance...
+2026-04-22 11:44:18,483 - utils - INFO - Fetching real-time quote data (B股)...
+2026-04-22 11:44:18,484 - utils - INFO - Fetching real-time quote data (AH股)...
+2026-04-22 11:44:18,484 - utils - INFO - Fetching real-time quote data (科创版)...
+2026-04-22 11:44:18,485 - utils - INFO - Fetching real-time quote data (港股)...
+2026-04-22 11:44:19,048 - utils - INFO - Success: 实时行情_B股 - 79 records
+2026-04-22 11:44:22,069 - utils - INFO - Success: 实时行情_AH股 - 200 records
+2026-04-22 11:44:22,358 - utils - INFO - Success: 实时行情_科创版 - 608 records
+2026-04-22 11:44:31,336 - utils - INFO - Success: 实时行情_港股 - 2744 records
+2026-04-22 11:44:55,104 - utils - INFO - Success: 实时行情_沪深京 - 5507 records
+2026-04-22 11:44:55,104 - utils - INFO - All quote data fetch completed: 5/5 succeeded
+2026-04-22 11:44:55,104 - utils - INFO - ==================================================
+2026-04-22 11:44:55,104 - utils - INFO - ==================================================
+2026-04-22 11:44:55,104 - utils - INFO - Quote data fetch completed: 5 data sources succeeded
+2026-04-23 09:04:40,490 - utils - INFO - Fetching stock history: bj920001 (A股)
+2026-04-23 09:04:41,607 - utils - INFO - Fetched 5 records for bj920001 (A股)
+2026-04-23 11:47:49,972 - utils - INFO - Fetching stock history: bj920001 (A股)
+2026-04-23 11:47:50,857 - utils - INFO - Fetched 5 records for bj920001 (A股)
+2026-04-23 15:18:41,208 - utils - INFO - Fetching stock history: bj920001 (A股)
+2026-04-23 15:18:42,027 - utils - INFO - Fetched 5 records for bj920001 (A股)
+2026-04-23 15:58:58,798 - utils - INFO - Fetching stock history: bj920001 (A股)
+2026-04-23 15:58:59,636 - utils - INFO - Fetched 5 records for bj920001 (A股)
+2026-04-23 16:18:14,877 - utils - INFO - Fetching stock history: bj920001 (A股)
+2026-04-23 16:18:15,698 - utils - INFO - Fetched 5 records for bj920001 (A股)
+2026-04-23 16:32:49,538 - utils - INFO - Fetching stock history: bj920001 (A股)
+2026-04-23 16:32:50,787 - utils - INFO - Fetched 6 records for bj920001 (A股)
+2026-04-23 16:39:07,985 - utils - INFO - Fetching financial analysis...
+2026-04-23 16:39:07,986 - utils - INFO - 正在获取财报分析数据: 20251231
+2026-04-23 16:39:12,783 - utils - INFO - 成功获取 20251231 财报数据，共 5546 条
+2026-04-23 16:39:28,727 - utils - INFO - Fetching stock history: bj920001 (A股)
+2026-04-23 16:39:29,429 - utils - INFO - Fetched 6 records for bj920001 (A股)
+2026-04-23 17:02:30,625 - utils - INFO - ==================================================
+2026-04-23 17:02:30,625 - utils - INFO - Starting to fetch quote data only...
+2026-04-23 17:02:30,625 - utils - INFO - ==================================================
+2026-04-23 17:02:30,625 - utils - INFO - Starting to fetch all quote data sources in parallel...
+2026-04-23 17:02:30,625 - utils - INFO - Fetching real-time quote data (沪深京A股) from Sina Finance...
+2026-04-23 17:02:30,626 - utils - INFO - Fetching real-time quote data (B股)...
+2026-04-23 17:02:30,626 - utils - INFO - Fetching real-time quote data (AH股)...
+2026-04-23 17:02:30,627 - utils - INFO - Fetching real-time quote data (科创版)...
+2026-04-23 17:02:30,627 - utils - INFO - Fetching real-time quote data (港股)...
+2026-04-23 17:02:31,216 - utils - INFO - Success: 实时行情_B股 - 79 records
+2026-04-23 17:02:33,002 - utils - INFO - Success: 实时行情_科创版 - 608 records
+2026-04-23 17:02:33,607 - utils - INFO - Success: 实时行情_AH股 - 200 records
+2026-04-23 17:02:55,715 - utils - INFO - Success: 实时行情_沪深京 - 5507 records
+2026-04-23 17:03:13,907 - utils - INFO - Success: 实时行情_港股 - 2746 records
+2026-04-23 17:03:13,908 - utils - INFO - All quote data fetch completed: 5/5 succeeded
+2026-04-23 17:03:13,908 - utils - INFO - ==================================================
+2026-04-23 17:03:13,908 - utils - INFO - ==================================================
+2026-04-23 17:03:13,908 - utils - INFO - Quote data fetch completed: 5 data sources succeeded
+2026-04-23 17:03:25,584 - utils - INFO - Fetching stock history: bj920001 (A股)
+2026-04-23 17:03:26,386 - utils - INFO - Fetched 6 records for bj920001 (A股)
+2026-04-23 20:56:10,304 - utils - INFO - ==================================================
+2026-04-23 20:56:10,307 - utils - INFO - Starting to fetch quote data only...
+2026-04-23 20:56:10,307 - utils - INFO - ==================================================
+2026-04-23 20:56:10,307 - utils - INFO - Starting to fetch all quote data sources in parallel...
+2026-04-23 20:56:10,309 - utils - INFO - Fetching real-time quote data (沪深京A股) from Sina Finance...
+2026-04-23 20:56:10,314 - utils - INFO - Fetching real-time quote data (B股)...
+2026-04-23 20:56:10,316 - utils - INFO - Fetching real-time quote data (AH股)...
+2026-04-23 20:56:10,316 - utils - INFO - Fetching real-time quote data (科创版)...
+2026-04-23 20:56:10,317 - utils - INFO - Fetching real-time quote data (港股)...
+2026-04-23 20:56:10,778 - utils - INFO - Success: 实时行情_B股 - 79 records
+2026-04-23 20:56:13,220 - utils - INFO - Success: 实时行情_AH股 - 200 records
+2026-04-23 20:56:13,703 - utils - INFO - Success: 实时行情_科创版 - 608 records
+2026-04-23 20:56:50,796 - utils - INFO - Success: 实时行情_沪深京 - 5507 records
+2026-04-23 20:56:51,056 - utils - INFO - Fetching financial analysis...
+2026-04-23 20:56:51,056 - utils - INFO - 正在获取财报分析数据: 20251231
+2026-04-23 20:56:56,040 - utils - INFO - 成功获取 20251231 财报数据，共 6148 条
+2026-04-23 20:57:26,901 - utils - INFO - Success: 实时行情_港股 - 2746 records
+2026-04-23 20:57:26,903 - utils - INFO - All quote data fetch completed: 5/5 succeeded
+2026-04-23 20:57:26,903 - utils - INFO - ==================================================
+2026-04-23 20:57:26,903 - utils - INFO - ==================================================
+2026-04-23 20:57:26,903 - utils - INFO - Quote data fetch completed: 5 data sources succeeded
+2026-04-23 20:59:33,306 - utils - INFO - Fetching growth comparison for: BJ920001
+2026-04-23 20:59:33,433 - utils - INFO - Fetched 8 comparison records for BJ920001
+2026-04-23 21:21:05,517 - utils - INFO - Fetching financial analysis...
+2026-04-23 21:21:05,518 - utils - INFO - 正在获取财报分析数据: 20261231
+2026-04-23 21:21:05,667 - utils - ERROR - 获取财报数据失败 20261231: 'NoneType' object is not subscriptable
+2026-04-23 21:21:05,667 - utils - WARNING - Function fetch_data attempt 1 failed: 'NoneType' object is not subscriptable, retrying in 5s...
+2026-04-23 21:21:10,669 - utils - INFO - 正在获取财报分析数据: 20261231
+2026-04-23 21:21:10,734 - utils - ERROR - 获取财报数据失败 20261231: 'NoneType' object is not subscriptable
+2026-04-23 21:21:10,734 - utils - WARNING - Function fetch_data attempt 2 failed: 'NoneType' object is not subscriptable, retrying in 5s...
+2026-04-23 21:21:15,736 - utils - INFO - 正在获取财报分析数据: 20261231
+2026-04-23 21:21:15,855 - utils - ERROR - 获取财报数据失败 20261231: 'NoneType' object is not subscriptable
+2026-04-23 21:21:15,855 - utils - ERROR - Function fetch_data failed after 3 attempts: 'NoneType' object is not subscriptable
+2026-04-23 21:21:15,855 - utils - ERROR - Failed to fetch financial analysis: 'NoneType' object is not subscriptable
+2026-04-23 21:21:15,855 - utils - WARNING - Function fetch_financial_analysis attempt 1 failed: 'NoneType' object is not subscriptable, retrying in 5s...
+2026-04-23 21:21:20,856 - utils - INFO - Fetching financial analysis...
+2026-04-23 21:21:20,856 - utils - INFO - 正在获取财报分析数据: 20261231
+2026-04-23 21:21:21,178 - utils - ERROR - 获取财报数据失败 20261231: 'NoneType' object is not subscriptable
+2026-04-23 21:21:21,178 - utils - WARNING - Function fetch_data attempt 1 failed: 'NoneType' object is not subscriptable, retrying in 5s...
+2026-04-23 21:21:26,181 - utils - INFO - 正在获取财报分析数据: 20261231
+2026-04-23 21:21:26,294 - utils - ERROR - 获取财报数据失败 20261231: 'NoneType' object is not subscriptable
+2026-04-23 21:21:26,295 - utils - WARNING - Function fetch_data attempt 2 failed: 'NoneType' object is not subscriptable, retrying in 5s...
+2026-04-23 21:21:31,296 - utils - INFO - 正在获取财报分析数据: 20261231
+2026-04-23 21:21:31,370 - utils - ERROR - 获取财报数据失败 20261231: 'NoneType' object is not subscriptable
+2026-04-23 21:21:31,370 - utils - ERROR - Function fetch_data failed after 3 attempts: 'NoneType' object is not subscriptable
+2026-04-23 21:21:31,370 - utils - ERROR - Failed to fetch financial analysis: 'NoneType' object is not subscriptable
+2026-04-23 21:21:31,370 - utils - WARNING - Function fetch_financial_analysis attempt 2 failed: 'NoneType' object is not subscriptable, retrying in 5s...
+2026-04-23 21:21:36,371 - utils - INFO - Fetching financial analysis...
+2026-04-23 21:21:36,372 - utils - INFO - 正在获取财报分析数据: 20261231
+2026-04-23 21:21:36,521 - utils - ERROR - 获取财报数据失败 20261231: 'NoneType' object is not subscriptable
+2026-04-23 21:21:36,522 - utils - WARNING - Function fetch_data attempt 1 failed: 'NoneType' object is not subscriptable, retrying in 5s...
+2026-04-23 21:21:41,522 - utils - INFO - 正在获取财报分析数据: 20261231
+2026-04-23 21:21:41,603 - utils - ERROR - 获取财报数据失败 20261231: 'NoneType' object is not subscriptable
+2026-04-23 21:21:41,603 - utils - WARNING - Function fetch_data attempt 2 failed: 'NoneType' object is not subscriptable, retrying in 5s...
+2026-04-23 21:21:46,603 - utils - INFO - 正在获取财报分析数据: 20261231
+2026-04-23 21:21:46,758 - utils - ERROR - 获取财报数据失败 20261231: 'NoneType' object is not subscriptable
+2026-04-23 21:21:46,758 - utils - ERROR - Function fetch_data failed after 3 attempts: 'NoneType' object is not subscriptable
+2026-04-23 21:21:46,758 - utils - ERROR - Failed to fetch financial analysis: 'NoneType' object is not subscriptable
+2026-04-23 21:21:46,758 - utils - ERROR - Function fetch_financial_analysis failed after 3 attempts: 'NoneType' object is not subscriptable
+2026-04-23 21:22:07,643 - utils - INFO - Fetching financial analysis...
+2026-04-23 21:22:07,643 - utils - INFO - 正在获取财报分析数据: 20251231
+2026-04-23 21:22:12,485 - utils - INFO - 成功获取 20251231 财报数据，共 6183 条
+2026-04-23 22:35:07,514 - utils - INFO - Fetching financial analysis...
+2026-04-23 22:35:07,514 - utils - INFO - 正在获取财报分析数据: 20250630
+2026-04-23 22:35:16,563 - utils - INFO - 成功获取 20250630 财报数据，共 11455 条
+2026-04-23 22:35:40,331 - utils - INFO - Fetching stock history: bj920001 (A股)
+2026-04-23 22:35:41,420 - utils - INFO - Fetched 6 records for bj920001 (A股)
+2026-04-23 22:36:27,661 - utils - INFO - Fetching financial analysis...
+2026-04-23 22:36:27,661 - utils - INFO - 正在获取财报分析数据: 20260331
+2026-04-23 22:36:36,166 - utils - INFO - 成功获取 20260331 财报数据，共 1266 条
+2026-04-23 22:38:01,826 - utils - INFO - Fetching stock history: bj920001 (A股)
+2026-04-23 22:38:03,737 - utils - INFO - Fetched 6 records for bj920001 (A股)
+2026-04-24 17:23:49,735 - utils - INFO - ==================================================
+2026-04-24 17:23:49,737 - utils - INFO - Starting to fetch quote data only...
+2026-04-24 17:23:49,737 - utils - INFO - ==================================================
+2026-04-24 17:23:49,737 - utils - INFO - Starting to fetch all quote data sources in parallel...
+2026-04-24 17:23:49,742 - utils - INFO - Fetching real-time quote data (沪深京A股) from Sina Finance...
+2026-04-24 17:23:49,745 - utils - INFO - Fetching real-time quote data (B股)...
+2026-04-24 17:23:49,750 - utils - INFO - Fetching real-time quote data (AH股)...
+2026-04-24 17:23:49,759 - utils - INFO - Fetching real-time quote data (科创版)...
+2026-04-24 17:23:49,760 - utils - INFO - Fetching real-time quote data (港股)...
+2026-04-24 17:23:50,311 - utils - INFO - Success: 实时行情_B股 - 79 records
+2026-04-24 17:23:52,851 - utils - INFO - Success: 实时行情_科创版 - 609 records
+2026-04-24 17:23:52,865 - utils - INFO - Success: 实时行情_AH股 - 200 records
+2026-04-24 17:24:10,519 - utils - INFO - Success: 实时行情_沪深京 - 5509 records
+2026-04-24 17:24:32,545 - utils - INFO - Success: 实时行情_港股 - 2745 records
+2026-04-24 17:24:32,546 - utils - INFO - All quote data fetch completed: 5/5 succeeded
+2026-04-24 17:24:32,546 - utils - INFO - ==================================================
+2026-04-24 17:24:32,546 - utils - INFO - ==================================================
+2026-04-24 17:24:32,546 - utils - INFO - Quote data fetch completed: 5 data sources succeeded
+2026-04-24 17:33:36,490 - utils - INFO - Fetching stock history: bj920001 (A股)
+2026-04-24 17:33:37,281 - utils - INFO - Fetched 22 records for bj920001 (A股)
+2026-04-24 17:49:06,572 - utils - INFO - Fetching stock history: bj920001 (A股)
+2026-04-24 17:49:07,298 - utils - INFO - Fetched 6 records for bj920001 (A股)
+2026-04-24 18:08:00,430 - utils - INFO - Fetching stock history: bj920001 (A股)
+2026-04-24 18:08:01,016 - utils - INFO - Fetched 58 records for bj920001 (A股)
+2026-04-24 18:09:02,946 - utils - INFO - Fetching stock history: bj920001 (A股)
+2026-04-24 18:09:03,514 - utils - INFO - Fetched 243 records for bj920001 (A股)
+2026-04-24 18:09:18,540 - utils - INFO - Fetching stock history: bj920001 (A股)
+2026-04-24 18:09:18,940 - utils - INFO - Fetched 22 records for bj920001 (A股)
+2026-04-24 18:09:28,748 - utils - INFO - Fetching stock history: bj920001 (A股)
+2026-04-24 18:09:29,143 - utils - INFO - Fetched 58 records for bj920001 (A股)
+2026-04-24 18:20:25,954 - utils - INFO - Fetching stock history: bj920001 (A股)
+2026-04-24 18:20:25,983 - utils - WARNING - Function fetch_stock_history attempt 1 failed: HTTPSConnectionPool(host='finance.sina.com.cn', port=443): Max retries exceeded with url: /realstock/company/bj920001/hisdata_klc2/klc_kl.js (Caused by NewConnectionError("HTTPSConnection(host='finance.sina.com.cn', port=443): Failed to establish a new connection: [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。")), retrying in 5s...
+2026-04-24 18:20:26,395 - utils - INFO - Fetching stock history: bj920001 (A股)
+2026-04-24 18:20:26,406 - utils - WARNING - Function fetch_stock_history attempt 1 failed: HTTPSConnectionPool(host='finance.sina.com.cn', port=443): Max retries exceeded with url: /realstock/company/bj920001/hisdata_klc2/klc_kl.js (Caused by NewConnectionError("HTTPSConnection(host='finance.sina.com.cn', port=443): Failed to establish a new connection: [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。")), retrying in 5s...
+2026-04-24 18:20:30,984 - utils - INFO - Fetching stock history: bj920001 (A股)
+2026-04-24 18:20:30,990 - utils - WARNING - Function fetch_stock_history attempt 2 failed: HTTPSConnectionPool(host='finance.sina.com.cn', port=443): Max retries exceeded with url: /realstock/company/bj920001/hisdata_klc2/klc_kl.js (Caused by NewConnectionError("HTTPSConnection(host='finance.sina.com.cn', port=443): Failed to establish a new connection: [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。")), retrying in 5s...
+2026-04-24 18:20:31,406 - utils - INFO - Fetching stock history: bj920001 (A股)
+2026-04-24 18:20:31,411 - utils - WARNING - Function fetch_stock_history attempt 2 failed: HTTPSConnectionPool(host='finance.sina.com.cn', port=443): Max retries exceeded with url: /realstock/company/bj920001/hisdata_klc2/klc_kl.js (Caused by NewConnectionError("HTTPSConnection(host='finance.sina.com.cn', port=443): Failed to establish a new connection: [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。")), retrying in 5s...
+2026-04-24 18:20:35,991 - utils - INFO - Fetching stock history: bj920001 (A股)
+2026-04-24 18:20:35,994 - utils - ERROR - Function fetch_stock_history failed after 3 attempts: HTTPSConnectionPool(host='finance.sina.com.cn', port=443): Max retries exceeded with url: /realstock/company/bj920001/hisdata_klc2/klc_kl.js (Caused by NewConnectionError("HTTPSConnection(host='finance.sina.com.cn', port=443): Failed to establish a new connection: [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。"))
+2026-04-24 18:20:36,412 - utils - INFO - Fetching stock history: bj920001 (A股)
+2026-04-24 18:20:36,417 - utils - ERROR - Function fetch_stock_history failed after 3 attempts: HTTPSConnectionPool(host='finance.sina.com.cn', port=443): Max retries exceeded with url: /realstock/company/bj920001/hisdata_klc2/klc_kl.js (Caused by NewConnectionError("HTTPSConnection(host='finance.sina.com.cn', port=443): Failed to establish a new connection: [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。"))
+2026-04-24 18:24:39,608 - utils - INFO - Fetching stock history: bj920001 (A股)
+2026-04-24 18:24:40,230 - utils - INFO - Fetched 58 records for bj920001 (A股)
+2026-04-24 18:37:07,515 - utils - INFO - Fetching stock history: bj920002 (A股)
+2026-04-24 18:37:08,469 - utils - INFO - Fetched 22 records for bj920002 (A股)
+2026-04-24 19:35:38,168 - utils - INFO - Fetching stock history: bj920001 (A股)
+2026-04-24 19:35:39,180 - utils - INFO - Fetched 22 records for bj920001 (A股)
+2026-04-24 19:36:05,003 - utils - INFO - Fetching stock history: bj920001 (A股)
+2026-04-24 19:36:05,510 - utils - INFO - Fetched 243 records for bj920001 (A股)
+2026-04-24 19:36:31,559 - utils - INFO - Fetching stock history: bj920001 (A股)
+2026-04-24 19:36:31,892 - utils - INFO - Fetched 22 records for bj920001 (A股)
+2026-04-24 20:24:16,656 - utils - INFO - Fetching stock history: bj920001 (A股)
+2026-04-24 20:24:17,598 - utils - INFO - Fetched 58 records for bj920001 (A股)
+2026-04-24 21:33:19,315 - utils - INFO - Fetching stock history: bj920001 (A股)
+2026-04-24 21:33:20,195 - utils - INFO - Fetched 22 records for bj920001 (A股)
+2026-04-24 23:55:57,744 - utils - INFO - Fetching stock history: bj920001 (A股)
+2026-04-24 23:55:58,487 - utils - INFO - Fetched 22 records for bj920001 (A股)
+2026-04-26 20:10:02,489 - utils - INFO - Fetching financial analysis...
+2026-04-26 20:10:02,489 - utils - INFO - 正在获取财报分析数据: 20261231
+2026-04-26 20:10:03,471 - utils - ERROR - 获取财报数据失败 20261231: 'NoneType' object is not subscriptable
+2026-04-26 20:10:03,471 - utils - WARNING - Function fetch_data attempt 1 failed: 'NoneType' object is not subscriptable, retrying in 5s...
+2026-04-26 20:10:08,473 - utils - INFO - 正在获取财报分析数据: 20261231
+2026-04-26 20:10:08,547 - utils - ERROR - 获取财报数据失败 20261231: 'NoneType' object is not subscriptable
+2026-04-26 20:10:08,548 - utils - WARNING - Function fetch_data attempt 2 failed: 'NoneType' object is not subscriptable, retrying in 5s...
+2026-04-26 20:10:13,550 - utils - INFO - 正在获取财报分析数据: 20261231
+2026-04-26 20:10:13,691 - utils - ERROR - 获取财报数据失败 20261231: 'NoneType' object is not subscriptable
+2026-04-26 20:10:13,691 - utils - ERROR - Function fetch_data failed after 3 attempts: 'NoneType' object is not subscriptable
+2026-04-26 20:10:13,691 - utils - ERROR - Failed to fetch financial analysis: 'NoneType' object is not subscriptable
+2026-04-26 20:10:13,691 - utils - WARNING - Function fetch_financial_analysis attempt 1 failed: 'NoneType' object is not subscriptable, retrying in 5s...
+2026-04-26 20:10:18,692 - utils - INFO - Fetching financial analysis...
+2026-04-26 20:10:18,692 - utils - INFO - 正在获取财报分析数据: 20261231
+2026-04-26 20:10:18,785 - utils - ERROR - 获取财报数据失败 20261231: 'NoneType' object is not subscriptable
+2026-04-26 20:10:18,786 - utils - WARNING - Function fetch_data attempt 1 failed: 'NoneType' object is not subscriptable, retrying in 5s...
+2026-04-26 20:10:23,788 - utils - INFO - 正在获取财报分析数据: 20261231
+2026-04-26 20:10:23,954 - utils - ERROR - 获取财报数据失败 20261231: 'NoneType' object is not subscriptable
+2026-04-26 20:10:23,954 - utils - WARNING - Function fetch_data attempt 2 failed: 'NoneType' object is not subscriptable, retrying in 5s...
+2026-04-26 20:10:28,956 - utils - INFO - 正在获取财报分析数据: 20261231
+2026-04-26 20:10:29,027 - utils - ERROR - 获取财报数据失败 20261231: 'NoneType' object is not subscriptable
+2026-04-26 20:10:29,027 - utils - ERROR - Function fetch_data failed after 3 attempts: 'NoneType' object is not subscriptable
+2026-04-26 20:10:29,027 - utils - ERROR - Failed to fetch financial analysis: 'NoneType' object is not subscriptable
+2026-04-26 20:10:29,027 - utils - WARNING - Function fetch_financial_analysis attempt 2 failed: 'NoneType' object is not subscriptable, retrying in 5s...
+2026-04-26 20:10:34,030 - utils - INFO - Fetching financial analysis...
+2026-04-26 20:10:34,031 - utils - INFO - 正在获取财报分析数据: 20261231
+2026-04-26 20:10:34,174 - utils - ERROR - 获取财报数据失败 20261231: 'NoneType' object is not subscriptable
+2026-04-26 20:10:34,175 - utils - WARNING - Function fetch_data attempt 1 failed: 'NoneType' object is not subscriptable, retrying in 5s...
+2026-04-26 20:10:39,177 - utils - INFO - 正在获取财报分析数据: 20261231
+2026-04-26 20:10:39,246 - utils - ERROR - 获取财报数据失败 20261231: 'NoneType' object is not subscriptable
+2026-04-26 20:10:39,247 - utils - WARNING - Function fetch_data attempt 2 failed: 'NoneType' object is not subscriptable, retrying in 5s...
+2026-04-26 20:10:44,249 - utils - INFO - 正在获取财报分析数据: 20261231
+2026-04-26 20:10:44,463 - utils - ERROR - 获取财报数据失败 20261231: 'NoneType' object is not subscriptable
+2026-04-26 20:10:44,464 - utils - ERROR - Function fetch_data failed after 3 attempts: 'NoneType' object is not subscriptable
+2026-04-26 20:10:44,464 - utils - ERROR - Failed to fetch financial analysis: 'NoneType' object is not subscriptable
+2026-04-26 20:10:44,464 - utils - ERROR - Function fetch_financial_analysis failed after 3 attempts: 'NoneType' object is not subscriptable
+2026-04-26 20:11:00,586 - utils - INFO - Fetching financial analysis...
+2026-04-26 20:11:00,587 - utils - INFO - 正在获取财报分析数据: 20251231
+2026-04-26 20:11:10,128 - utils - INFO - 成功获取 20251231 财报数据，共 7824 条
+2026-04-27 11:39:15,618 - utils - INFO - Fetching stock history: bj920001 (A股)
+2026-04-27 11:39:16,541 - utils - INFO - Fetched 19 records for bj920001 (A股)
+2026-04-27 12:00:55,740 - utils - INFO - Fetching stock history: bj920001 (A股)
+2026-04-27 12:00:56,535 - utils - INFO - Fetched 19 records for bj920001 (A股)
+2026-04-27 12:15:01,318 - utils - INFO - Fetching stock history: bj920001 (A股)
+2026-04-27 12:15:02,703 - utils - INFO - Fetched 19 records for bj920001 (A股)
+2026-04-28 19:34:05,926 - utils - INFO - Fetching stock history: bj920001 (A股)
+2026-04-28 19:34:07,369 - utils - INFO - Fetched 6 records for bj920001 (A股)
+2026-04-28 19:34:20,130 - utils - INFO - Fetching stock history: bj920001 (A股)
+2026-04-28 19:34:20,701 - utils - INFO - Fetched 21 records for bj920001 (A股)
+2026-04-28 19:35:01,918 - utils - INFO - ==================================================
+2026-04-28 19:35:01,918 - utils - INFO - Starting to fetch quote data only...
+2026-04-28 19:35:01,918 - utils - INFO - ==================================================
+2026-04-28 19:35:01,918 - utils - INFO - Starting to fetch all quote data sources in parallel...
+2026-04-28 19:35:01,918 - utils - INFO - Fetching real-time quote data (沪深京A股) from Sina Finance...
+2026-04-28 19:35:01,919 - utils - INFO - Fetching real-time quote data (B股)...
+2026-04-28 19:35:01,919 - utils - INFO - Fetching real-time quote data (AH股)...
+2026-04-28 19:35:01,921 - utils - INFO - Fetching real-time quote data (科创版)...
+2026-04-28 19:35:01,921 - utils - INFO - Fetching real-time quote data (港股)...
+2026-04-28 19:35:02,422 - utils - INFO - Success: 实时行情_B股 - 79 records
+2026-04-28 19:35:04,070 - utils - INFO - Success: 实时行情_科创版 - 609 records
+2026-04-28 19:35:06,298 - utils - INFO - Success: 实时行情_AH股 - 200 records
+2026-04-28 19:35:19,223 - utils - INFO - Success: 实时行情_沪深京 - 5509 records
+2026-04-28 19:35:33,958 - utils - INFO - ==================================================
+2026-04-28 19:35:33,958 - utils - INFO - Starting to fetch quote data only...
+2026-04-28 19:35:33,958 - utils - INFO - ==================================================
+2026-04-28 19:35:33,958 - utils - INFO - Starting to fetch all quote data sources in parallel...
+2026-04-28 19:35:33,959 - utils - INFO - Fetching real-time quote data (沪深京A股) from Sina Finance...
+2026-04-28 19:35:33,959 - utils - INFO - Fetching real-time quote data (B股)...
+2026-04-28 19:35:33,959 - utils - INFO - Fetching real-time quote data (AH股)...
+2026-04-28 19:35:33,959 - utils - INFO - Fetching real-time quote data (科创版)...
+2026-04-28 19:35:33,961 - utils - INFO - Fetching real-time quote data (港股)...
+2026-04-28 19:35:34,170 - utils - INFO - Success: 实时行情_B股 - 79 records
+2026-04-28 19:35:36,411 - utils - INFO - Success: 实时行情_科创版 - 609 records
+2026-04-28 19:35:38,244 - utils - INFO - Success: 实时行情_AH股 - 200 records
+2026-04-28 19:35:40,618 - utils - INFO - Success: 实时行情_港股 - 2748 records
+2026-04-28 19:35:40,620 - utils - INFO - All quote data fetch completed: 5/5 succeeded
+2026-04-28 19:35:40,620 - utils - INFO - ==================================================
+2026-04-28 19:35:40,620 - utils - INFO - ==================================================
+2026-04-28 19:35:40,620 - utils - INFO - Quote data fetch completed: 5 data sources succeeded
+2026-04-28 19:35:49,407 - utils - INFO - Success: 实时行情_沪深京 - 5509 records
+2026-04-28 19:36:13,542 - utils - INFO - Success: 实时行情_港股 - 2748 records
+2026-04-28 19:36:13,543 - utils - INFO - All quote data fetch completed: 5/5 succeeded
+2026-04-28 19:36:13,543 - utils - INFO - ==================================================
+2026-04-28 19:36:13,543 - utils - INFO - ==================================================
+2026-04-28 19:36:13,543 - utils - INFO - Quote data fetch completed: 5 data sources succeeded
+2026-04-28 19:36:19,495 - utils - INFO - Fetching growth comparison for: BJ920001
+2026-04-28 19:36:19,669 - utils - INFO - Fetched 8 comparison records for BJ920001

@@ -4,13 +4,15 @@
 基于AKShare库开发的股票数据GUI工具，支持实时行情、资金流向、单股分析、同行比较等功能。
 
 ## 使用方法
-1. 下载并解压 AKShare_Release.zip
-2. 双击运行 AKShare_Gui.exe
-3. 首次运行会自动创建数据目录
+```bash
+pip install requirements.txt
+pyhton run_gui.py
+```
+pip install requirements.txt
+run_gui.py
 
 ## 功能特点
 - 实时股票行情（沪深京A股、B股、AH股、科创版）
-- 资金流向监控
 - 单股历史走势分析
 - 同行财务指标对比
 - 自动定时更新（30分钟）

@@ -214,6 +214,26 @@ HISTORY_B_COLUMNS = {
     'turnover': '换手率'
 }
 
+# 财报分析列名映射（东方财富研报）
+FINANCIAL_ANALYSIS_COLUMNS = {
+    '序号': '序号',
+    '股票代码': '代码',
+    '股票简称': '简称',
+    '每股收益': '每股收益（元）',
+    '营业总收入-营业总收入': '营业总收入（元）',
+    '营业总收入-同比增长': '营业总收入同比增长（%）',
+    '营业总收入-季度环比增长': '营业总收入环比增长（%）',
+    '净利润-净利润': '净利润（元）',
+    '净利润-同比增长': '净利润同比增长（%）',
+    '净利润-季度环比增长': '净利润环比增长（%）',
+    '每股净资产': '每股净资产（元）',
+    '净资产收益率': '净资产收益率（%）',
+    '每股经营现金流量': '每股经营现金流量（元）',
+    '销售毛利率': '销售毛利率（%）',
+    '所处行业': '所处行业',
+    '最新公告日期': '最新公告日期',
+}
+
 # 同行比较列名映射（API已返回中文，这里保持原样）
 GROWTH_COMPARISON_COLUMNS = {
     '代码': '代码',
@@ -252,6 +272,7 @@ def get_column_mapping(data_type):
     """根据数据类型获取列名映射"""
     mapping_dict = {
         'financial': FINANCIAL_COLUMNS,
+        'financial_analysis': FINANCIAL_ANALYSIS_COLUMNS,
         'quote': QUOTE_COLUMNS,
         'quote_zh_a': QUOTE_COLUMNS,
         'quote_zh_b': QUOTE_COLUMNS,     # B股已返回中文列名

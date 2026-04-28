@@ -74,9 +74,10 @@ class DataScheduler:
             self._stop_event.wait(60)  # 每分钟检查一次
 
     def _execute_task(self):
-        """执行爬取任务"""
+        """执行爬取任务 - 只爬取实时股票行情数据"""
         logger.info("=" * 60)
         logger.info(f"Executing scheduled task at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+        logger.info("只爬取实时股票行情数据")
         logger.info("=" * 60)
 
         try:
@@ -84,8 +85,8 @@ class DataScheduler:
             deleted_count, total_size = self.file_manager.clean_old_files()
             logger.info(f"Cleaned {deleted_count} old files, freed {total_size / 1024:.2f} KB")
 
-            # 2. 并行获取所有数据
-            results = self.data_fetcher.fetch_all_parallel()
+            # 2. 只获取实时股票行情数据
+            results = self.data_fetcher.fetch_all_quote_data_only()
 
             # 3. 保存所有获取到的数据
             file_paths = {}

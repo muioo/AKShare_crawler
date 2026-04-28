@@ -22,10 +22,12 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from data_fetcher import DataFetcher
 from config import DATA_DIR, DATA_TYPES
+from gui.financial_display import build_financial_display_config, format_financial_value
 from gui.stock_analysis import StockAnalysisPanel
 from gui.file_manager import FileManager
 from gui.scheduler import DataScheduler
 from gui.growth_comparison import GrowthComparisonPanel
+from financial_analysis import FinancialAnalysis
 
 
 class StockDataApp:
@@ -45,6 +47,7 @@ class StockDataApp:
         self.data_fetcher = DataFetcher()
         self.file_manager = FileManager()
         self.scheduler = DataScheduler(callback=self.on_scheduler_complete)
+        self.financial_analyzer = FinancialAnalysis()
 
         self.current_data = None
         self.current_data_type = None
@@ -55,13 +58,17 @@ class StockDataApp:
         self.fund_sort_order_var = tk.StringVar(value='desc')
         self.fund_display_count_var = tk.StringVar(value='50')
 
+        # 财的所有可用年份和季度
+        self.financial_years = self.financial_analyzer.get_available_years()
+        self.financial_quarters = self.financial_analyzer.get_available_quarters()
+
         self.all_data = {
             '实时行情_沪深京A股': None,
             '实时行情_B股': None,
             '实时行情_AH股': None,
             '实时行情_科创版': None,
             '实时行情_港股': None,
-            '资金流向': None,
+            '财报分析': None,
         }
 
         self.setup_ui()
@@ -90,18 +97,6 @@ class StockDataApp:
 
         ttk.Label(control_bar, text=f"文件保留: {self.file_manager.RETENTION_DAYS}天", foreground="gray").pack(side=tk.LEFT, padx=15)
 
-        # ========== 全局股票搜索 ==========
-        ttk.Separator(control_bar, orient=tk.VERTICAL).pack(side=tk.LEFT, fill=tk.Y, padx=10)
-
-        ttk.Label(control_bar, text="股票搜索:").pack(side=tk.LEFT, padx=5)
-        self.global_search_var = tk.StringVar()
-        self.global_search_entry = ttk.Entry(control_bar, textvariable=self.global_search_var, width=15)
-        self.global_search_entry.pack(side=tk.LEFT, padx=5)
-        # 绑定回车键
-        self.global_search_entry.bind('<Return>', lambda e: self.global_search_stock())
-
-        ttk.Button(control_bar, text="搜索", command=self.global_search_stock).pack(side=tk.LEFT, padx=5)
-
         self.next_run_var = tk.StringVar(value="下次运行: 未启动")
         ttk.Label(control_bar, textvariable=self.next_run_var, foreground="blue").pack(side=tk.RIGHT, padx=5)
 
@@ -115,7 +110,7 @@ class StockDataApp:
         self.growth_frame = ttk.Frame(self.notebook)
 
         self.notebook.add(self.quote_frame, text="实时股票行情")
-        self.notebook.add(self.fund_flow_frame, text="资金流向")
+        self.notebook.add(self.fund_flow_frame, text="财报分析")
         self.notebook.add(self.analysis_frame, text="单股分析")
         self.notebook.add(self.growth_frame, text="同行比较")
 
@@ -204,11 +199,49 @@ class StockDataApp:
         h_scroll.grid(row=1, column=0, sticky=(tk.W, tk.E))
         self.quote_tree.configure(xscrollcommand=h_scroll.set)
 
+        # 添加搜索功能
+        search_frame = ttk.Frame(control_panel)
+        search_frame.pack(fill=tk.X, pady=(10, 0))
+
+        ttk.Label(search_frame, text="股票搜索:", font=('Arial', 10, 'bold')).pack(pady=(0, 5), anchor=tk.W)
+        self.quote_search_var = tk.StringVar()
+        ttk.Entry(search_frame, textvariable=self.quote_search_var, width=15).pack(anchor=tk.W, pady=2)
+
+        button_frame = ttk.Frame(search_frame)
+        button_frame.pack(fill=tk.X, pady=5)
+        ttk.Button(button_frame, text="搜索", command=self.search_quote_data, width=8).pack(side=tk.LEFT, padx=2)
+        ttk.Button(button_frame, text="重置", command=self.reset_quote_search, width=8).pack(side=tk.LEFT, padx=2)
+
     def setup_fund_flow_tab(self):
-        """设置资金流向选项卡"""
+        """设置财报分析选项卡"""
         # 左侧控制面板
         control_panel = ttk.Frame(self.fund_flow_frame, width=200)
         control_panel.grid(row=0, column=0, sticky=(tk.N, tk.S), padx=(0, 10))
+
+        ttk.Label(control_panel, text="\u5e74\u4efd\u9009\u62e9:", font=("Arial", 10, "bold")).pack(pady=(0, 5), anchor=tk.W)
+        ttk.Label(control_panel, text="\u5e74\u4efd\u9009\u62e9:", font=("Arial", 10, "bold")).pack(pady=(0, 5), anchor=tk.W)
+        self.financial_year_var = tk.StringVar(value=str(datetime.now().year))
+        year_combo = ttk.Combobox(
+            control_panel,
+            textvariable=self.financial_year_var,
+            values=[str(y) for y in self.financial_years],
+            state='readonly',
+            width=15
+        )
+        year_combo.pack(anchor=tk.W, pady=2)
+        ttk.Label(control_panel, text="\u5b63\u5ea6\u9009\u62e9:", font=("Arial", 10, "bold")).pack(pady=(10, 5), anchor=tk.W)
+        self.financial_quarter_var = tk.StringVar(value="\u5e74\u62a5")
+        quarter_combo = ttk.Combobox(
+            control_panel,
+            textvariable=self.financial_quarter_var,
+            values=list(self.financial_quarters.keys()),
+            state='readonly',
+            width=15
+        )
+        quarter_combo.pack(anchor=tk.W, pady=2)
+
+
+        ttk.Separator(control_panel, orient=tk.HORIZONTAL).pack(fill=tk.X, pady=10)
 
         # 排序设置
         ttk.Label(control_panel, text="排序设置", font=('Arial', 10, 'bold')).pack(pady=(0, 5), anchor=tk.W)
@@ -231,20 +264,8 @@ class StockDataApp:
 
         ttk.Separator(control_panel, orient=tk.HORIZONTAL).pack(fill=tk.X, pady=10)
 
-        ttk.Label(control_panel, text="显示数量:").pack(anchor=tk.W, pady=(5, 0))
-        fund_count_combo = ttk.Combobox(
-            control_panel,
-            textvariable=self.fund_display_count_var,
-            values=['10', '20', '50', '100', '全部'],
-            state='readonly',
-            width=15
-        )
-        fund_count_combo.pack(anchor=tk.W, pady=2)
-
-        ttk.Separator(control_panel, orient=tk.HORIZONTAL).pack(fill=tk.X, pady=10)
-
         # 按钮
-        ttk.Button(control_panel, text="获取数据", command=self.fetch_fund_flow_data, width=18).pack(pady=5)
+        ttk.Button(control_panel, text="查询", command=self.fetch_fund_flow_data, width=18).pack(pady=5)
         ttk.Button(control_panel, text="刷新排序", command=self.refresh_fund_flow_sort, width=18).pack(pady=5)
         ttk.Button(control_panel, text="保存CSV", command=lambda: self.save_to_csv('fund_flow'), width=18).pack(pady=5)
 
@@ -267,6 +288,19 @@ class StockDataApp:
         h_scroll = ttk.Scrollbar(data_frame, orient=tk.HORIZONTAL, command=self.fund_flow_tree.xview)
         h_scroll.grid(row=1, column=0, sticky=(tk.W, tk.E))
         self.fund_flow_tree.configure(xscrollcommand=h_scroll.set)
+
+        # 添加搜索功能
+        search_frame = ttk.Frame(control_panel)
+        search_frame.pack(fill=tk.X, pady=(10, 0))
+
+        ttk.Label(search_frame, text="股票搜索:", font=('Arial', 10, 'bold')).pack(pady=(0, 5), anchor=tk.W)
+        self.financial_search_var = tk.StringVar()
+        ttk.Entry(search_frame, textvariable=self.financial_search_var, width=15).pack(anchor=tk.W, pady=2)
+
+        button_frame = ttk.Frame(search_frame)
+        button_frame.pack(fill=tk.X, pady=5)
+        ttk.Button(button_frame, text="搜索", command=self.search_financial_data, width=8).pack(side=tk.LEFT, padx=2)
+        ttk.Button(button_frame, text="重置", command=self.reset_financial_search, width=8).pack(side=tk.LEFT, padx=2)
 
     def setup_analysis_tab(self):
         self.stock_analysis_panel = StockAnalysisPanel(self.analysis_frame)
@@ -312,7 +346,7 @@ class StockDataApp:
 
         # 设置默认值（优先选择常用排序列）
         default_sort = None
-        for col in ['主力净流入', '涨跌幅', '超大单净流入', '大单净流入', '中单净流入', '小单净流入', '主力净占比']:
+        for col in ['总市值', '营业收入', '净利润']:
             if col in sortable_columns:
                 default_sort = col
                 break
@@ -362,10 +396,10 @@ class StockDataApp:
         current_tab = self.notebook.index(self.notebook.select())
         if current_tab == 0:
             self.load_current_quote_data()
-        elif current_tab == 1 and self.all_data.get('资金流向') is not None:
-            # 资金流向使用排序
+        elif current_tab == 1 and self.all_data.get('财报分析') is not None:
+            # 财报分析使用排序
             self.current_data_type = 'fund_flow'
-            self.display_data(self.all_data['资金流向'], self.fund_flow_tree, sort_data=True)
+            self.display_data(self.all_data['财报分析'], self.fund_flow_tree, sort_data=True)
 
         self.status_var.set(f"自动爬取完成: {len(file_paths)} 个文件已保存")
 
@@ -383,12 +417,13 @@ class StockDataApp:
         self.load_current_quote_data()
 
     def fetch_all_parallel(self):
+        """立即爬取全部数据 - 只爬取实时股票行情数据"""
         def run_fetch():
-            self.status_var.set("正在并行获取所有数据...")
+            self.status_var.set("正在并行获取实时股票行情数据...")
             try:
                 deleted_count, total_size = self.file_manager.clean_old_files()
-                self.status_var.set(f"已清理 {deleted_count} 个旧文件，正在获取数据...")
-                results = self.data_fetcher.fetch_all_parallel()
+                self.status_var.set(f"已清理 {deleted_count} 个旧文件，正在获取实时股票行情数据...")
+                results = self.data_fetcher.fetch_all_quote_data_only()
                 file_paths = {}
                 for subtype, (df, data_type, name) in results.items():
                     if df is not None and not df.empty:
@@ -419,6 +454,7 @@ class StockDataApp:
 
         # 判断是否为资金流向表格
         is_fund_flow = (tree == self.fund_flow_tree)
+        financial_display_config = build_financial_display_config(df) if is_fund_flow else {}
 
         # 如果需要排序
         if sort_data:
@@ -427,14 +463,14 @@ class StockDataApp:
             elif is_fund_flow:
                 df = self.sort_data(df.copy(), 'fund_flow')
 
-        # 限制显示数量
+        # 限制显示数量（财报分析不限制）
         if is_fund_flow:
-            display_count = self.fund_display_count_var.get()
+            # 财报分析不限制显示数量
+            pass
         else:
             display_count = self.display_count_var.get()
-
-        if display_count != '全部':
-            df = df.head(int(display_count))
+            if display_count != '全部':
+                df = df.head(int(display_count))
 
         # 清空表格
         for item in tree.get_children():
@@ -446,20 +482,81 @@ class StockDataApp:
 
         # 设置列头和宽度
         for col in columns:
-            tree.heading(col, text=str(col))
-            if col in ['代码', '名称']:
+            # 添加单位信息
+            header_text = str(col)
+            if is_fund_flow:  # 财报分析列名加单位
+                if col == '总市值':
+                    header_text = '总市值（元）'
+                elif col == '流通市值':
+                    header_text = '流通市值（元）'
+                elif col == '营业收入':
+                    header_text = '营业收入（元）'
+                elif col == '净利润':
+                    header_text = '净利润（元）'
+
+            if is_fund_flow:
+                header_text = financial_display_config[col]["header"]
+            tree.heading(col, text=header_text)
+            if col in ['代码', '简称']:
                 width = 80
+            elif col in ['总市值', '流通市值']:
+                width = 100
+            elif col in ['总市值排名', '流通市值排名']:
+                width = 100
+            elif col in ['营业收入', '净利润']:
+                width = 120
+            elif col in ['营业收入排名', '净利润排名']:
+                width = 120
             elif col in ['最新价', '涨跌幅', '涨跌额', '今开', '昨收', '最高', '最低']:
                 width = 80
-            elif col in ['主力净流入', '超大单净流入', '大单净流入', '中单净流入', '小单净流入']:
-                width = 100
             else:
                 width = 100
             tree.column(col, width=width, anchor=tk.W)
 
         # 添加数据
         for idx, row in df.iterrows():
-            tree.insert('', tk.END, values=list(row))
+            values = []
+            for col, val in zip(columns, row):
+                if pd.isna(val):
+                    values.append("")
+                else:
+                    if is_fund_flow:
+                        values.append(format_financial_value(val, financial_display_config[col]))
+                        continue
+                    # 财报分析数据格式化
+                    if is_fund_flow:
+                        try:
+                            num_val = float(val)
+
+                            # 总市值和流通市值：格式化为万元/亿元
+                            if col in ['总市值', '流通市值']:
+                                if num_val >= 100000000:  # 亿元
+                                    values.append(f"{num_val/100000000:.2f}亿")
+                                elif num_val >= 10000:  # 万元
+                                    values.append(f"{num_val/10000:.2f}万")
+                                else:
+                                    values.append(f"{num_val:.2f}")
+                            # 营业收入和净利润：格式化为万元/亿元
+                            elif col in ['营业收入', '净利润']:
+                                if num_val >= 100000000:  # 亿元
+                                    values.append(f"{num_val/100000000:.2f}亿")
+                                elif num_val >= 10000:  # 万元
+                                    values.append(f"{num_val/10000:.2f}万")
+                                else:
+                                    values.append(f"{num_val:.2f}")
+                            # 排名列：整数
+                            elif '排名' in col:
+                                values.append(f"{int(num_val)}")
+                            # 代码列：整数
+                            elif col == '代码':
+                                values.append(f"{int(num_val)}")
+                            else:
+                                values.append(str(val))
+                        except (ValueError, TypeError):
+                            values.append(str(val))
+                    else:
+                        values.append(str(val))
+            tree.insert('', tk.END, values=values)
 
         # ========== 更新排序下拉框 ==========
         if is_fund_flow:
@@ -501,111 +598,135 @@ class StockDataApp:
         self.status_var.set(f"已按 {self.sort_column_var.get()} {self.sort_order_var.get()} 排序")
 
     def refresh_fund_flow_sort(self):
-        """刷新资金流向排序"""
-        fund_data = self.all_data.get('资金流向')
-        if fund_data is None or fund_data.empty:
+        """刷新财报分析排序"""
+        financial_data = self.all_data.get('财报分析')
+        if financial_data is None or financial_data.empty:
             messagebox.showwarning("警告", "没有数据可排序，请先获取数据")
             return
 
         # 重新显示数据（会触发排序）
-        self.display_data(fund_data, self.fund_flow_tree, sort_data=True)
+        self.display_data(financial_data, self.fund_flow_tree, sort_data=True)
         self.status_var.set(f"已按 {self.fund_sort_column_var.get()} {self.fund_sort_order_var.get()} 排序")
 
-    def global_search_stock(self):
-        """全局股票搜索（跨市场搜索）"""
-        search_text = self.global_search_var.get().strip()
+    def search_quote_data(self):
+        """搜索实时行情数据"""
+        search_text = self.quote_search_var.get().strip()
         if not search_text:
             messagebox.showwarning("警告", "请输入股票代码或名称")
             return
 
-        # 检查是否有数据
-        has_data = False
-        for key in self.all_data.keys():
-            if self.all_data.get(key) is not None and not self.all_data[key].empty:
-                has_data = True
-                break
+        # 获取当前市场的数据
+        subtype = self.quote_subtype_var.get()
+        subtype_key = f'实时行情_{subtype}'
+        data = self.all_data.get(subtype_key)
 
-        if not has_data:
-            messagebox.showwarning("警告", "没有数据可搜索，请先点击\"立即爬取全部\"获取数据")
+        if data is None or data.empty:
+            messagebox.showwarning("警告", "没有数据可搜索，请先获取数据")
             return
 
-        # 跨市场搜索
-        search_text_upper = search_text.upper()
-        search_text_lower = search_text.lower()
-        results = {}
+        # 执行搜索
+        result = self._search_by_code_and_name(data, search_text)
 
-        # 搜索所有市场
-        for subtype, data in self.all_data.items():
-            if data is None or data.empty:
-                continue
-
-            df = data.copy()
-
-            # 查找代码列和名称列
-            code_col = None
-            name_col = None
-
-            for col in df.columns:
-                col_lower = str(col).lower()
-                if '代码' in col_lower or 'code' in col_lower:
-                    code_col = col
-                elif '名称' in col_lower or 'name' in col_lower:
-                    name_col = col
-
-            # 搜索逻辑
-            mask = pd.Series([False] * len(df), index=df.index)
-
-            if code_col is not None:
-                # 代码列模糊匹配
-                mask |= df[code_col].astype(str).str.contains(search_text_upper, na=False, case=False)
-
-            if name_col is not None:
-                # 名称列模糊匹配
-                mask |= df[name_col].astype(str).str.contains(search_text, na=False, case=False)
-
-            # 筛选结果
-            filtered_df = df[mask]
-
-            if not filtered_df.empty:
-                results[subtype] = filtered_df
-
-        if not results:
+        if result.empty:
             messagebox.showinfo("提示", f"未找到匹配的股票: {search_text}")
             return
 
-        # 找到第一个有结果的市场
-        first_subtype = list(results.keys())[0]
-        first_result = results[first_subtype]
+        # 显示搜索结果
+        self.current_data = result
+        self.current_data_type = 'quote'
+        self.display_data(result, self.quote_tree, sort_data=False)
+        self.status_var.set(f"搜索结果: {search_text} - 找到 {len(result)} 条记录")
 
-        # 获取市场名称
-        market_name = None
-        for subtype in self.QUOTE_SUBTYPES.keys():
-            if f'实时行情_{subtype}' == first_subtype:
-                market_name = subtype
-                break
+    def reset_quote_search(self):
+        """重置实时行情搜索，显示所有数据"""
+        subtype = self.quote_subtype_var.get()
+        subtype_key = f'实时行情_{subtype}'
+        data = self.all_data.get(subtype_key)
 
-        # 切换到实时行情选项卡
-        self.notebook.select(0)
+        if data is not None and not data.empty:
+            self.current_data = data
+            self.current_data_type = 'quote'
+            self.display_data(data, self.quote_tree, sort_data=True)
+            self.status_var.set(f"已重置，显示所有数据: {len(data)} 条")
 
-        # 切换到对应的市场
-        if market_name:
-            self.quote_subtype_var.set(market_name)
-            self.on_quote_subtype_change()
+        self.quote_search_var.set("")
+
+    def search_financial_data(self):
+        """搜索财报分析数据"""
+        search_text = self.financial_search_var.get().strip()
+        if not search_text:
+            messagebox.showwarning("警告", "请输入股票代码或名称")
+            return
+
+        # 获取财报数据
+        data = self.all_data.get('财报分析')
+
+        if data is None or data.empty:
+            messagebox.showwarning("警告", "没有数据可搜索，请先查询财报数据")
+            return
+
+        # 执行搜索
+        result = self._search_by_code_and_name(data, search_text)
+
+        if result.empty:
+            messagebox.showinfo("提示", f"未找到匹配的股票: {search_text}")
+            return
 
         # 显示搜索结果
-        self.current_data = first_result
-        self.current_data_type = 'quote'
-        self.display_data(first_result, self.quote_tree, sort_data=False)
+        self.current_data = result
+        self.current_data_type = 'fund_flow'
+        self.display_data(result, self.fund_flow_tree, sort_data=False)
+        self.status_var.set(f"搜索结果: {search_text} - 找到 {len(result)} 条记录")
 
-        # 显示搜索结果统计
-        total_count = sum(len(df) for df in results.values())
-        status_msg = f"搜索结果: {search_text} - 找到 {total_count} 条匹配记录"
-        if len(results) > 1:
-            status_msg += f"（跨{len(results)}个市场）"
-        self.status_var.set(status_msg)
+    def reset_financial_search(self):
+        """重置财报分析搜索，显示所有数据"""
+        data = self.all_data.get('财报分析')
 
-        # 清空搜索框
-        self.global_search_var.set("")
+        if data is not None and not data.empty:
+            self.current_data = data
+            self.current_data_type = 'fund_flow'
+            self.display_data(data, self.fund_flow_tree, sort_data=True)
+            self.status_var.set(f"已重置，显示所有数据: {len(data)} 条")
+
+        self.financial_search_var.set("")
+
+    def _search_by_code_and_name(self, df, search_text):
+        """
+        根据股票代码和名称搜索数据
+
+        Args:
+            df: 要搜索的DataFrame
+            search_text: 搜索文本
+
+        Returns:
+            DataFrame: 搜索结果
+        """
+        df = df.copy()
+
+        # 查找代码列和名称列
+        code_col = None
+        name_col = None
+
+        for col in df.columns:
+            col_lower = str(col).lower()
+            if '代码' in col_lower or 'code' in col_lower:
+                code_col = col
+            elif '名称' in col_lower or 'name' in col_lower:
+                name_col = col
+
+        # 搜索逻辑
+        mask = pd.Series([False] * len(df), index=df.index)
+
+        if code_col is not None:
+            # 代码列模糊匹配（不区分大小写）
+            mask |= df[code_col].astype(str).str.contains(search_text.upper(), na=False, case=False)
+
+        if name_col is not None:
+            # 名称列模糊匹配（不区分大小写）
+            mask |= df[name_col].astype(str).str.contains(search_text, na=False, case=False)
+
+        # 筛选结果
+        return df[mask]
 
     def fetch_quote_data(self):
         self.current_subtype = self.quote_subtype_var.get()
@@ -615,7 +736,12 @@ class StockDataApp:
         def run_fetch():
             try:
                 method = getattr(self.data_fetcher, method_name)
-                df = method()
+                result = method()
+                # data_fetcher返回三元组(df, data_type, subtype)，只取DataFrame
+                if isinstance(result, tuple):
+                    df = result[0]
+                else:
+                    df = result
                 self.root.after(0, lambda: self._on_quote_data_received(df))
             except Exception as e:
                 self.root.after(0, lambda: self._on_fetch_error(e))
@@ -636,22 +762,74 @@ class StockDataApp:
         self.status_var.set(f"获取失败: {str(error)}")
 
     def fetch_fund_flow_data(self):
-        self.status_var.set("正在获取资金流向数据...")
+        """获取财报分析数据（按日期）"""
+        year = self.financial_year_var.get().strip()
+
+        quarter = self.financial_quarter_var.get().strip()
+
+        if not year or not quarter:
+            messagebox.showwarning("\u8b66\u544a", "\u8bf7\u9009\u62e9\u5e74\u4efd\u548c\u5b63\u5ea6")
+            return
+
+        quarter_code = self.financial_quarters.get(quarter)
+        if not quarter_code:
+            messagebox.showwarning("\u8b66\u544a", "\u65e0\u6548\u7684\u5b63\u5ea6\u9009\u62e9")
+            return
+
+        date_str = f"{year}{quarter_code}"
+        year_int = int(year)
+        display_date = FinancialAnalysis.format_date(year_int, quarter_code)
+
+        self.status_var.set(f"正在获取 {display_date} 财报数据...")
+
         def run_fetch():
             try:
-                df = self.data_fetcher.fetch_fund_flow_data()
-                self.root.after(0, lambda: self._on_fund_flow_data_received(df))
+                result = self.data_fetcher.fetch_financial_analysis(year=year_int, quarter_code=quarter_code)
+                # data_fetcher返回三元组(df, data_type, subtype)，只取DataFrame
+                if isinstance(result, tuple):
+                    df = result[0]
+                else:
+                    df = result
+
+                # 调试信息
+                print(f"[DEBUG] 查询日期: {date_str}")
+                print(f"[DEBUG] 获取到的数据类型: {type(df)}")
+                if df is not None:
+                    print(f"[DEBUG] 数据形状: {df.shape}")
+                    print(f"[DEBUG] 数据是否为空: {df.empty}")
+                    print(f"[DEBUG] 列名: {df.columns.tolist()}")
+                    if not df.empty:
+                        print(f"[DEBUG] 前3行数据:\n{df.head(3)}")
+                else:
+                    print(f"[DEBUG] 数据为None")
+
+                self.root.after(0, lambda: self._on_fund_flow_data_received(df, display_date))
             except Exception as e:
+                print(f"[DEBUG] 获取数据异常: {str(e)}")
+                import traceback
+                traceback.print_exc()
                 self.root.after(0, lambda: self._on_fetch_error(e))
         thread = threading.Thread(target=run_fetch)
         thread.start()
 
-    def _on_fund_flow_data_received(self, df):
+    def _on_fund_flow_data_received(self, df, date_str):
+        """
+        财报数据接收回调
+
+        Args:
+            df: 财报数据DataFrame
+            date_str: 日期字符串（如"2024年年报"）
+        """
+        if df is None or df.empty:
+            messagebox.showwarning("提示", f"未找到 {date_str} 的财报数据")
+            self.status_var.set(f"⚠️ 未找到 {date_str} 的财报数据")
+            return
+
         self.current_data = df
         self.current_data_type = 'fund_flow'
-        self.all_data['资金流向'] = df
-        self.display_data(df, self.fund_flow_tree, sort_data=True)
-        self.status_var.set(f"资金流向数据获取成功，共 {len(df)} 条")
+        self.all_data['财报分析'] = df
+        self.display_data(df, self.fund_flow_tree, sort_data=False)
+        self.status_var.set(f"✅ 财报数据获取成功: {date_str} - 共 {len(df)} 条")
 
     def save_to_csv(self, data_type):
         if data_type == 'quote':
@@ -660,9 +838,10 @@ class StockDataApp:
             chinese_type = DATA_TYPES.get(f'quote_{subtype}', subtype)
             default_filename = f"{chinese_type}_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.csv"
         elif data_type == 'fund_flow':
-            df = self.all_data.get('资金流向')
-            chinese_type = '资金流向'
-            default_filename = f"{chinese_type}_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.csv"
+            df = self.all_data.get('财报分析')
+            # 文件名包含选择的年份和季度
+            quarter = self.financial_quarter_var.get()
+            default_filename = f"\u8d22\u62a5\u5206\u6790_{year}\u5e74{quarter}_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.csv"
         else:
             messagebox.showwarning("警告", "不支持的数据类型")
             return
@@ -699,7 +878,7 @@ class StockDataApp:
             self.load_latest_csv_by_prefix("实时行情", "科创版", "实时行情_科创版")
             self.load_latest_csv_by_prefix("实时行情", "港股", "实时行情_港股")
 
-            self.load_latest_csv_by_prefix("资金流向", "", "资金流向")
+            self.load_latest_csv_by_prefix("财报分析", "", "财报分析")
 
             self.root.after(0, self.auto_display_all)
             self.root.after(0, lambda: self.status_var.set("✅ 已自动加载最新数据"))
@@ -731,9 +910,7 @@ class StockDataApp:
 
     def auto_display_all(self):
         self.load_current_quote_data()
-        if self.all_data["资金流向"] is not None:
-            self.current_data_type = 'fund_flow'
-            self.display_data(self.all_data["资金流向"], self.fund_flow_tree, sort_data=True)
+        # 财报分析需要手动查询，不自动显示
 
 
 def main():

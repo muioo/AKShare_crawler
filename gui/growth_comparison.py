@@ -44,11 +44,11 @@ class GrowthComparisonPanel:
         ttk.Button(search_frame, text="保存CSV", command=self.save_to_csv, width=10).pack(side=tk.LEFT, padx=5)
 
         # 提示文字
-        tk.Label(search_frame, text="提示: 输入完整代码，如 SZ000895 / SH600000 / BJ920001", foreground="gray").pack(side=tk.LEFT, padx=10)
+        ttk.Label(search_frame, text="提示: 输入完整代码，如 SZ000895 / SH600000 / BJ920001", foreground="gray").pack(side=tk.LEFT, padx=10)
 
         # 状态显示
         self.status_var = tk.StringVar(value="请输入股票代码进行查询")
-        status_label = tk.Label(search_frame, textvariable=self.status_var, foreground="blue")
+        status_label = ttk.Label(search_frame, textvariable=self.status_var, foreground="blue")
         status_label.pack(side=tk.RIGHT, padx=10)
 
         # 数据显示区域（带滚动条）
@@ -133,29 +133,78 @@ class GrowthComparisonPanel:
 
         # 设置列头和宽度
         for col in columns:
-            self.tree.heading(col, text=str(col))
+            # 添加单位信息
+            header_text = str(col)
+            if col == '总市值':
+                header_text = '总市值（元）'
+            elif col == '流通市值':
+                header_text = '流通市值（元）'
+            elif '增长率' in col and '%' not in col:
+                header_text = f'{col}（%）'
+
+            self.tree.heading(col, text=header_text)
+
             # 根据列名设置不同宽度
             if col in ['代码', '名称']:
-                width = 80
+                width = 90
             elif col in ['股票简称', '简称']:
-                width = 120
+                width = 130
             elif col in ['最新价']:
-                width = 80
-            elif col in ['总市值', '流通市值']:
                 width = 100
+            elif col in ['总市值', '流通市值']:
+                width = 120
             elif col in ['涨跌幅', '换手率']:
-                width = 80
+                width = 100
             elif '增长率' in col:
                 width = 110
             elif '排名' in col:
                 width = 100
             else:
-                width = 100
+                width = 110
             self.tree.column(col, width=width, anchor=tk.W)
 
         # 添加数据
         for idx, row in df.iterrows():
-            values = [str(val) if pd.notna(val) else "" for val in row]
+            values = []
+            for col, val in zip(columns, row):
+                if pd.isna(val):
+                    values.append("")
+                else:
+                    # 判断是否为数值类型
+                    try:
+                        num_val = float(val)
+
+                        # 排名列：整数
+                        if '排名' in str(col):
+                            values.append(f"{int(num_val)}")
+                        # 代码列：完整显示（包括前缀），保持原始格式
+                        elif col == '代码':
+                            # 直接使用原始值，确保完整显示
+                            code_str = str(val).strip()
+                            values.append(code_str)
+                        # 增长率：百分比格式
+                        elif '增长率' in col:
+                            values.append(f"{num_val:.2f}%")
+                        # 涨跌幅/换手率：百分比格式
+                        elif col in ['涨跌幅', '换手率']:
+                            values.append(f"{num_val:.2f}%")
+                        # 总市值/流通市值：格式化为万元/亿元
+                        elif col in ['总市值', '流通市值']:
+                            if num_val >= 100000000:  # 亿元
+                                values.append(f"{num_val/100000000:.2f}亿")
+                            elif num_val >= 10000:  # 万元
+                                values.append(f"{num_val/10000:.2f}万")
+                            else:
+                                values.append(f"{num_val:.2f}")
+                        # 最新价：保留两位小数
+                        elif col == '最新价':
+                            values.append(f"{num_val:.2f}")
+                        else:
+                            # 其他数值列保留两位小数
+                            values.append(f"{num_val:.2f}")
+                    except (ValueError, TypeError):
+                        # 非数值类型，直接转换为字符串
+                        values.append(str(val))
             self.tree.insert("", tk.END, values=values)
 
         self.status_var.set(f"✅ 查询成功: {code} - 共 {len(df)} 家同行公司")
